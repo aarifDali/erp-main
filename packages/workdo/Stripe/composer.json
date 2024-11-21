@@ -1,0 +1,44 @@
+{
+    "name": "workdo/stripe",
+    "description": "Description for stripe package",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "stripe/stripe-php": "^9.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Workdo\\Stripe\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\Stripe\\Providers\\StripeServiceProvider",
+                "Workdo\\Stripe\\Providers\\ViewComposer",
+                "Workdo\\Stripe\\Providers\\InvoicePayment",
+                "Workdo\\Stripe\\Providers\\RetainerPayment",
+                "Workdo\\Stripe\\Providers\\CoursePayment",
+                "Workdo\\Stripe\\Providers\\HotelRoomBookingPayment",
+                "Workdo\\Stripe\\Providers\\propertyInvoicePayment",
+                "Workdo\\Stripe\\Providers\\VehicleBookingPayment",
+                "Workdo\\Stripe\\Providers\\MembershipPlanPayment",
+                "Workdo\\Stripe\\Providers\\BeautySpaSerivceProvider",
+                "Workdo\\Stripe\\Providers\\ParkingSerivceProvider",
+                "Workdo\\Stripe\\Providers\\ContentPayment",
+                "Workdo\\Stripe\\Providers\\ParkingSerivceProvider",
+                "Workdo\\Stripe\\Providers\\MovieShowBookingServiceProvider",
+                "Workdo\\Stripe\\Providers\\EventShowBookingServiceProvider",
+                "Workdo\\Stripe\\Providers\\BookingsServiceProvider",
+                "Workdo\\Stripe\\Providers\\MovieShowBookingServiceProvider",
+                "Workdo\\Stripe\\Providers\\FacilitiesSerivceProvider"
+            ]
+        }
+    }
+}

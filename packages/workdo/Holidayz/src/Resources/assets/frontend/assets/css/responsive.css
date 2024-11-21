@@ -1,0 +1,959 @@
+/*================================================================================================*/
+/*=================[                                                            ]=================*/
+/*=================[    !!!!!!!!   CSS CREATED BY RAJODIYA INFOTECH  !!!!!!!!   ]=================*/
+/*=================[                                                            ]=================*/
+/*================================================================================================*/
+
+@media (min-width: 992px) {
+    .header-style-one .main-navigationbar .menu-items-col .main-nav {
+        display: flex;
+        align-items: center;
+    }
+    .desk-only {
+        display: block !important;
+    }
+    .mobile-only {
+        display: none !important;
+    }
+    .menu-right .wishlist-header,
+    .menu-right .profile-header {
+        display: none;
+    }
+}
+@media screen and (max-width: 1440px) {
+    .instagram-section .insta-slider .slick-list {
+        padding: 0 !important;
+    }
+    .menu-right-btns .make-app-btn span {
+        display: none !important;
+    }
+    .menu-right-btns .make-app-btn svg {
+        margin: 0;
+    }
+}
+@media screen and (max-width: 1260px) {
+    .footer-bottom {
+        padding-top: 30px;
+    }
+    .footer-link .contactlink {
+        font-size: 18px;
+    }
+    .site-footer {
+        padding: 60px 0 30px;
+    }
+    .offset-left {
+        margin-left: 0;
+        padding: 0 15px;
+    }
+    .offset-right {
+        margin-right: 0;
+        padding: 0 15px;
+    }
+    .header-style-one .main-navigationbar .menu-items-col .main-nav {
+        padding: 0 15px;
+    }
+    .banner-content-inner h2 {
+        font: var(--h1);
+    }
+}
+@media screen and (max-width: 1199px) {
+    :root {
+        --h1: normal 600 40px/1 var(--second-font);
+        --h2: normal 600 32px/1 var(--second-font);
+        --h3: normal 600 26px/1 var(--second-font);
+        --h4: normal 600 20px/1 var(--second-font);
+        --h5: normal 600 18px/1 var(--second-font);
+        --h6: normal 600 16px/1 var(--second-font);
+    }
+    .announce-bar ul li:not(:last-of-type) {
+        margin-right: 12px;
+    }
+    .header-style-one .main-navigationbar .menu-items-col .main-nav {
+        padding: 0 15px;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li:not(:last-of-type) {
+        padding-right: 12px;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li
+        > a
+        svg {
+        height: 14px;
+        width: 14px;
+    }
+    .header-style-one .main-navigationbar .menu-items-col .main-nav > li > a {
+        font-size: 13px;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li.has-item
+        > a:after {
+        height: 7px;
+        width: 8px;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li.has-item
+        > a {
+        padding-right: 15px;
+    }
+    .header-style-one .menu-right li:not(:last-of-type) {
+        margin-right: 10px;
+    }
+    .footer-col {
+        padding-left: 20px;
+    }
+    .header-style-one .main-navigationbar .logo-col {
+        max-width: 80px;
+    }
+    .menu-right-btns ul li {
+        font-size: 12px;
+    }
+    .rooms-section .rooms-slider .slick-list {
+        padding-right: 100px !important;
+    }
+    .login-section .create-account-right {
+        left: 15px;
+        top: 140px;
+    }
+    .checkout-page .checkout-info .checkout-card .card-price-det-right {
+        min-width: fit-content;
+    }
+    .checkout-page .checkout-info .checkout-card .card-price-det-left div p,
+    .checkout-page .checkout-info .checkout-card .card-price-det-right p {
+        font-size: 17px !important;
+        margin-bottom: 3px;
+    }
+    .price-summery .price-summery-title h2 {
+        font: var(--h2);
+    }
+    .cart-popup .time-info {
+        margin-top: 15px;
+    }
+    .product-filter-list-card .product-image a {
+        margin-bottom: 0px;
+        padding-top: 89%;
+    }
+    .menu-right-btns .make-app-btn {
+        padding: 14px 15px;
+    }
+}
+@media screen and (max-width: 991px) {
+    :root {
+        --h1: normal 600 36px/1 var(--second-font);
+    }
+    .menu-right-btns .make-app-btn svg {
+        margin-right: 0;
+    }
+    .call-btn svg {
+        width: 30px;
+    }
+    .header-style-one .mobile-menu .mobile-menu-button {
+        width: 100%;
+    }
+    .header-style-one.head-sticky,
+    .header-style-one {
+        background: var(--second-color);
+        padding: 0;
+        border-bottom: 1px solid var(--border-color);
+    }
+    .menu-right-btns ul > li:not(:last-child) {
+        padding: 17.5px 15px;
+    }
+    .call-btn svg {
+        width: 24px;
+        height: 24px;
+    }
+    .menu-right-btns .make-app-btn {
+        margin-left: 15px;
+        padding: 8px;
+    }
+    .head-sticky .menu-right-btns .make-app-btn {
+        background: var(--theme-color);
+    }
+    .call-btn svg path {
+        stroke: var(--white);
+    }
+    .navigationbar-row {
+        padding-left: 0;
+    }
+    .header-style-one .mobile-menu {
+        display: inline-block;
+        position: relative;
+        z-index: 1;
+        width: 22px;
+        height: 22px;
+        margin: 0 0 0 20px;
+    }
+    .header-style-one .main-navigationbar .menu-items-col {
+        align-items: center;
+        justify-content: flex-end;
+    }
+    .header-style-one .main-navigationbar .menu-items-col .main-nav {
+        padding-left: 15px;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li:not(:last-of-type) {
+        padding-right: 15px;
+    }
+    .header-style-one.dark-header .menu-right li {
+        padding: 15px 0;
+    }
+    .header-style-one .main-navigationbar .menu-items-col .main-nav > li {
+        padding: 15px 0;
+    }
+    .header-style-one
+        .main-navigationbar
+        .menu-items-col
+        .main-nav
+        > li.has-item
+        > a {
+        padding-right: 15px;
+    }
+    .header-style-one .menu-right li a span {
+        font-size: 11px;
+    }
+    .header-style-one .count {
+        top: -4px;
+        right: -8px;
+    }
+    .footer-col:not(:last-of-type) {
+        padding-right: 10px;
+    }
+    .pro-swatch {
+        font-size: 10px;
+    }
+    .footer-col:not(:first-of-type) {
+        padding: 0;
+    }
+    .footer-subscribe-col {
+        flex: 0 0 100%;
+        padding: 0;
+        max-width: 100%;
+        margin-bottom: 0;
+        order: 5;
+        margin-top: 30px;
+    }
+    .footer-list-social li a {
+        height: 32px;
+        width: 32px;
+    }
+    .site-footer {
+        padding: 40px 0 30px;
+    }
+    .padding-top {
+        padding-top: 40px;
+    }
+    .padding-bottom {
+        padding-bottom: 40px;
+    }
+    /****************  HOME PAGE *****************/
+    .form-service {
+        gap: 0;
+        margin: 0 -10px;
+        width: auto;
+    }
+    .form-service > * {
+        flex: 0 0 50%;
+        padding: 0 10px;
+    }
+    .btn-check-service {
+        max-width: 100%;
+    }
+    .btn-check-service a br {
+        display: none;
+    }
+    .services-search-form {
+        padding: 20px 15px;
+        margin-top: 30px;
+    }
+    .btn-check-service a {
+        padding: 12px 0;
+    }
+    .services-search-form .input-wrapper {
+        padding: 15px 0;
+    }
+    .banner-itm .banner-inner {
+        padding: 150px 0 70px 0;
+    }
+    .amenities-content {
+        margin-bottom: 30px;
+    }
+    .amenitoes-img-center img:first-child {
+        margin-bottom: 20px;
+    }
+    .testimonial-section .testimonial-slider {
+        padding-bottom: 20px;
+        margin-top: 30px;
+    }
+    .testimonial-section .testimonial-slider .slick-dots {
+        bottom: -15px;
+    }
+    .about-us-section .about-img {
+        padding: 60px 0 60px 40px;
+    }
+    .our-room-img {
+        padding: 70px 40px 70px 0;
+    }
+    .section-title {
+        margin-bottom: 10px;
+    }
+    .blog-section .blog-slider .slick-dots {
+        bottom: -30px;
+    }
+    .video-popup {
+        top: 40%;
+        left: 75%;
+    }
+    .testimonial-section .testimonial-slider .test-itm .test-content h4 {
+        font-size: 18px;
+        line-height: 24px;
+    }
+    .rooms-slider {
+        margin-top: 20px;
+    }
+    .product-sorting-row .nice-select {
+        width: 150px;
+    }
+    .product-filter-card-row .product-bottom-content .price {
+        font-size: 20px;
+    }
+    .product-filter-card-row .product-bottom-content .price del {
+        font-size: 14px;
+    }
+    .product-filter-card-row .product-bottom-content .price span {
+        margin: 0px 5px;
+    }
+    .product-listing-section {
+        padding-bottom: 20px;
+    }
+    .common-banner-section {
+        padding: 90px 0 40px;
+    }
+    .common-banner-section .services-search-form {
+        margin-top: 25px;
+    }
+    .product-filter-left-column .product-filter-card-row {
+        padding-top: 25px;
+    }
+    .product-filter-left-column .product-sorting-row {
+        padding: 40px 0px 20px;
+    }
+    .cart-popup .chekout-wrapper {
+        border-left: 1px solid var(--border-color);
+        margin-top: 20px;
+    }
+    .cart-popup-info {
+        max-height: 80vh;
+        height: 100%;
+        overflow: auto;
+    }
+    .product-filter-left-column .product-card {
+        flex: 0 0 50%;
+        max-width: 50%;
+        width: 100%;
+    }
+    .product-filter-list-card .product-card-inner {
+        flex-direction: column;
+    }
+    .product-filter-list-card .product-image-wrp {
+        max-width: 100%;
+    }
+    .product-filter-list-card .product-content {
+        margin-left: 0px;
+        margin-top: 15px;
+    }
+    .product-filter-list-card .product-image-slider .slick-dots {
+        bottom: 20px;
+    }
+    /* .product-filter-left-column .product-card {
+    flex: 0 0 100%;
+    max-width: 100%;
+  } */
+    .login-section .create-account {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    .checkout-page .checkout-info .checkout-info-left {
+        padding-top: 10px;
+    }
+    .set {
+        margin-bottom: 10px;
+    }
+    .desk-menu-btn .desk-side-menu {
+        display: none !important;
+    }
+    .blog-section {
+        padding-bottom: 70px;
+    }
+    .slick-dots {
+        bottom: 30px;
+    }
+    .rooms-section .rooms-slider .slick-dots {
+        bottom: -30px;
+    }
+    .product-filter-card-row .product-bottom-content .nice-select {
+        flex: 0 0 100%;
+    }
+    .price-summery-detl .section-title {
+        margin-bottom: 20px;
+    }
+}
+@media screen and (max-width: 767px) {
+    .section-title-left {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+    .header-style-one.dark-header .menu-right li,
+    .header-style-one .menu-right li {
+        padding: 0 0;
+    }
+    .header-style-one .main-navigationbar .menu-items-col {
+        justify-content: flex-end;
+    }
+    .header-style-one .menu-right li a .icon-lable {
+        display: none !important;
+    }
+    .header-style-one .menu-right {
+        justify-content: flex-end;
+        align-items: center;
+    }
+    .header-style-one .count {
+        top: -9px;
+    }
+    .header-style-one .menu-right li {
+        flex: unset;
+    }
+    .header-style-one .menu-right li:not(:last-of-type) {
+        margin-right: 15px;
+    }
+    .header-style-one .menu-right li:not(:last-of-type) a {
+        height: auto;
+        width: auto;
+        border: none;
+    }
+    .header-style-one .menu-right li a svg {
+        height: 20px;
+        width: 20px;
+    }
+    .header-style-one .menu-right li:last-of-type button,
+    .header-style-one .menu-right li > * {
+        display: block;
+        border: none;
+    }
+    .head-sticky.header-style-one .menu-right li.cart-header {
+        padding: 16px 15px;
+    }
+    .header-style-one .menu-right li:last-of-type {
+        width: auto;
+        max-width: initial;
+        padding: 16px 15px;
+    }
+    .mobile-menu-wrapper .mobile-menu-bar > ul > li a {
+        color: var(--black);
+    }
+    .mobile-menu-wrapper .mobile-menu-bar > ul > li a svg path {
+        fill: var(--black);
+    }
+    .header-style-one .mobile-menu {
+        margin: 0 0 0 12px;
+    }
+    .mobile-menu-wrapper .menu-close-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+    .mobile-menu-wrapper .menu-close-icon {
+        height: auto;
+        position: relative;
+        right: 0;
+        top: 0;
+        justify-content: flex-start;
+        text-align: right;
+        padding: 10px 20px;
+        background: var(--theme-color);
+        width: 100%;
+    }
+    .header-style-one.dark-header .count {
+        background: var(--second-color);
+        color: var(--theme-color);
+    }
+    .footer-bottom-row {
+        padding: 0 0 40px;
+    }
+    .footer-bottom-row ul {
+        justify-content: flex-start;
+        margin: 20px 0 0;
+    }
+    .footer-subscribe-col {
+        margin: 0 !important;
+    }
+    .mini-cart-footer .u-save {
+        font-size: 15px;
+        margin-bottom: 15px;
+    }
+    .footer-col:not(:last-of-type) {
+        padding: 0;
+    }
+    .footer-subscribe-col,
+    .footer-col {
+        flex: 0 0 100%;
+        padding: 0;
+        max-width: 100%;
+        margin-bottom: 30px;
+    }
+    .footer-bottom {
+        padding-top: 20px;
+    }
+    .site-footer {
+        padding: 40px 0 0;
+    }
+    .footer-link-2 .footer-widget {
+        margin-top: 0;
+    }
+    .slick-arrow {
+        width: 36px;
+        height: 36px;
+    }
+    .slick-slider .slick-arrow {
+        opacity: 1;
+    }
+    .offset-container {
+        padding: 0 15px;
+    }
+    /****************  HOME PAGE *****************/
+    .welcome-text {
+        min-width: unset;
+        padding: 0;
+    }
+    .about-us-section {
+        padding: 40px 0;
+    }
+    .about-us-section .about-img {
+        padding: 0;
+        border: 0;
+    }
+    .about-us-section .about-content {
+        margin-bottom: 25px;
+    }
+    .our-rooms-section .our-room-content {
+        margin: 30px 0 0 0 !important;
+    }
+    .our-room-img {
+        padding: 0;
+        border: 0;
+    }
+    .swiming-pool-section .swiming-pool-content {
+        margin-top: 30px;
+    }
+    .policy-links {
+        justify-content: start;
+        margin: 10px 0 20px 0;
+    }
+    .swiming-pool-section {
+        padding: 40px 0;
+    }
+    .video-popup {
+        top: 42%;
+        left: 45%;
+    }
+    /* .product-filter-card-row .product-bottom-content .nice-select {
+    flex: 0 0 100%;
+  } */
+    .product-sorting-row .filter-title .icon {
+        display: block;
+        max-width: 25px;
+        margin: 0 auto;
+    }
+    .filter-title .filter-ic {
+        border: 1px solid var(--second-color);
+        padding: 2px;
+        display: block;
+    }
+    .product-sorting-row .filter-title h4 {
+        display: none;
+    }
+    .product-sorting-row .filter-title {
+        display: block;
+        padding: 0;
+        border: 0;
+        max-width: 35px;
+        width: 100%;
+    }
+    /* .product-filter-right-column {
+        position: fixed;
+        top: 0;
+        background: var(--white);
+        left: 0;
+        max-width: 315px;
+        height: 100%;
+        z-index: 4;
+        overflow: hidden;
+        transition: all ease-in-out 0.5s;
+        -webkit-transform: translate(-100%, 0px);
+        -moz-transform: translate(100%, 0px);
+        -ms-transform: translate(100%, 0px);
+        -o-transform: translate(100%, 0px);
+        transform: translate(-100%, 0px);
+    } */
+    .filter-open .product-filter-right-column {
+        -moz-transform: translate(0);
+        -o-transform: translate(0);
+        -ms-transform: translate(0);
+        -webkit-transform: translate(0);
+        transform: translate(0);
+        overflow: auto;
+        height: 100%;
+    }
+    .product-filter-right-column .close-filter {
+        display: block;
+    }
+    .close-filter {
+        position: absolute;
+        top: 0;
+        background: var(--second-color);
+        height: 30px;
+        width: 30px;
+        padding: 7px;
+        right: 10px;
+        cursor: pointer;
+    }
+    .close-filter svg {
+        height: 100%;
+        width: 100%;
+    }
+    .product-filter-body {
+        padding-bottom: 30px;
+    }
+    .cart-popup .product-card-inner .product-image {
+        max-width: 40%;
+    }
+    .cart-popup .room-info {
+        gap: 9px;
+    }
+    .cart-popup .price {
+        font-size: 16px;
+    }
+    .room-facilities .room-facilities-list li svg {
+        height: 21px;
+        width: 21px;
+        margin-right: 5px;
+    }
+    .search-detail-center {
+        padding: 20px 15px;
+    }
+    .search-detail-card .product-card-right {
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding-top: 0px;
+        border: 0;
+        text-align: start;
+    }
+    .search-detail-card .product-content-wrp {
+        flex-direction: column;
+    }
+    .search-detail-card .price {
+        justify-content: start;
+        font-size: 18px;
+    }
+    .search-detail-card .product-card-right .btn-secondary {
+        margin: 15px 0px;
+    }
+    .search-detail-card .available-info {
+        justify-content: start;
+    }
+    .search-detail-card .guest-info {
+        margin-top: 10px;
+    }
+    .search-filter-sec .product-sorting-row .filter-title h4 {
+        display: block;
+    }
+    .room-page-main-section .row [class*="col-"]:not(:last-child) {
+        padding-right: 15px;
+        padding-bottom: 15px;
+    }
+    .room-desc .room-facilities .reviews .clients-review .clients-review-box {
+        flex-wrap: wrap;
+    }
+    .clients-review-box div:last-child {
+        text-align: left;
+    }
+    .clients-review-box div:last-child img {
+        margin-left: 0;
+    }
+    .room-desc .room-facilities .reviews .clients-review .review-reply-box {
+        margin-left: 0;
+    }
+    .rating-summry {
+        margin-bottom: 30px;
+    }
+    .room-desc .room-facilities .rating-det {
+        padding-bottom: 0;
+    }
+    .checkout-info .checkout-summery {
+        padding-top: 10px;
+    }
+    .checkout-page .checkout-info .checkout-card .check-inout-det {
+        gap: 15px;
+    }
+    .checkout-page .checkout-info .checkout-card .card-price-det {
+        flex-wrap: wrap;
+    }
+    .price-summery .price-summery-title {
+        padding: 20px;
+    }
+    .cartDrawer {
+        width: 100%;
+    }
+    .cartDrawer .closecart {
+        left: 10px;
+        width: 15px;
+        height: 22px;
+        top: 50%;
+        transform: translateY(-50%);
+        -webkit-transform: translateY(-50%);
+        -moz-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+        -o-transform: translateY(-50%);
+    }
+    .product-sorting-row .nice-select {
+        padding: 0px 20px 10px 0px;
+    }
+    .cartDrawer .mini-cart-body {
+        padding: 20px 15px;
+    }
+    .mini-cart-item:not(:last-of-type) {
+        margin-bottom: 15px;
+    }
+    .mini-cart-footer {
+        padding: 20px 15px;
+    }
+    .welcome-section .welcome-text {
+        margin-bottom: 20px;
+    }
+    .popup-inner {
+        max-width: 90%;
+    }
+    .amenities-content ul li a svg {
+        height: 20px;
+        width: 20px;
+    }
+    .cartDrawer .mini-cart-header {
+        padding: 16px 20px 16px 40px;
+    }
+    .mini-cart-footer-total-row {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .mini-cart-footer .link-btn {
+        font-size: 14px;
+    }
+    .price-summery-detl .set .acnav-label {
+        font-size: 20px;
+    }
+    .back-btn {
+        margin-bottom: 20px;
+    }
+    .room-desc .room-desc-left .room-item {
+        margin: 20px 0;
+    }
+    .room-desc .room-desc-left .room-item li svg {
+        width: 20px;
+        height: 20px;
+    }
+    .room-desc .room-facilities .fac-list ul li svg {
+        height: 20px;
+        width: 20px;
+    }
+}
+@media screen and (max-width: 575px) {
+    :root {
+        --h2: normal 600 26px/1 var(--second-font);
+        --h3: normal 600 22px/1 var(--second-font);
+        --h4: normal 600 20px/1 var(--second-font);
+    }
+    .footer-subscribe-col input[type="email"] {
+        margin-right: 10px;
+    }
+    .footer-widget h3,
+    .footer-widget h4 {
+        margin-bottom: 12px;
+    }
+    .footer-col {
+        flex: 0 0 100%;
+    }
+    .price-lang-btn {
+        display: none;
+    }
+    .menu-right-btns ul > li:not(:last-child) {
+        padding: 18px 15px 18px 8px;
+    }
+    .header-style-one .main-navigationbar .logo-col {
+        padding: 12px 15px 12px 0;
+    }
+    /****************  HOME PAGE *****************/
+    .amenitoes-img-center {
+        padding-bottom: 30px;
+    }
+    .product-sorting-row .nice-select {
+        width: 100px;
+    }
+    .cart-popup {
+        padding: 0 15px;
+    }
+    .cart-popup .product-card-inner {
+        flex-direction: column;
+    }
+    .cart-popup .product-card-inner .product-image {
+        max-width: 100%;
+    }
+    .cart-popup-info {
+        padding: 15px;
+    }
+    .cart-popup .checkout-top-wrp {
+        padding: 15px 15px;
+        gap: 10px;
+    }
+    .checkout-summery li {
+        gap: 10px;
+    }
+    .search-filter-sec .search-filter-title {
+        display: none;
+    }
+    .search-filter-sec .product-sorting-row .nice-select {
+        width: 100%;
+    }
+    .search-filter-sec .product-sorting-row .filter-select-box {
+        margin-left: 25px;
+        flex: 1;
+    }
+    .search-filter-sec .product-sorting-row {
+        gap: 15px;
+    }
+    .search-detail-card .product-card-inner .product-image {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .search-detail-card .room-info {
+        gap: 10px;
+    }
+    .calendar-left-wrp {
+        margin-bottom: 20px;
+    }
+    .search-detail-center .date-select {
+        flex-direction: column;
+        align-items: start;
+        margin-top: 20px;
+    }
+    .search-detail-center .date-select li:not(:last-of-type) {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    .room-facilities,
+    .pick-date {
+        margin-bottom: 20px;
+    }
+    .room-facilities .room-facilities-list li {
+        margin-bottom: 12px;
+    }
+    .select-room-form .radio-group label .select-left {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+    .select-room-form .select-right {
+        justify-content: start;
+        margin-top: 15px;
+    }
+    .login-section .create-account-right {
+        left: 0;
+        top: 0;
+        position: unset;
+    }
+    .room-desc .room-desc-left .room-item {
+        gap: 15px;
+    }
+    .room-desc .room-services .tabs-container .tab-content .transfer-det {
+        flex-wrap: wrap;
+    }
+    .hotel-img-inner div img {
+        width: 100%;
+    }
+    .room-desc .room-facilities .hotel-img-inner {
+        display: block;
+    }
+    .checkout-page .checkout-info .checkout-card {
+        flex-wrap: wrap;
+    }
+    .checkout-page .checkout-info .checkout-card .checkout-card-det {
+        flex: auto;
+    }
+    .checkout-card-img {
+        width: 100%;
+    }
+    .checkout-card-img img {
+        margin: auto;
+    }
+    .checkout-page .checkout-info .checkout-card .checkout-card-det {
+        padding: 0 10px 10px;
+        position: unset;
+    }
+    .checkout-page .checkout-info .checkout-card .ckt-card-service {
+        flex-direction: column;
+    }
+    .checkout-page .checkout-info .checkout-card .check-inout-det {
+        flex-direction: column;
+        align-items: start;
+    }
+    .checkout-page .checkout-info .checkout-card .card-price-det-right {
+        text-align: left !important;
+    }
+    .guest-info-box ul li {
+        display: flex;
+        flex-direction: column;
+    }
+    .form-service > * {
+        flex: 0 0 100%;
+    }
+    .form-service > * {
+        flex: 0 0 100%;
+    }
+    .room-desc .room-facilities {
+        margin-bottom: 0px;
+    }
+    .product-filter-left-column .product-card {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 420px) {
+    .rooms-section .rooms-slider .slick-list {
+        padding-right: 0 !important;
+    }
+    .room-desc .room-facilities .room-capacity-box ul {
+        width: 100%;
+        flex: unset;
+        border-bottom: 1px solid var(--border-color);
+    }
+}
+@media screen and (max-width: 370px) {
+    .mobile-menu-bar .stp-navlink:not(:last-of-type) {
+        margin-right: 15px;
+    }
+    .video-popup {
+        top: 30%;
+        left: 40%;
+    }
+}

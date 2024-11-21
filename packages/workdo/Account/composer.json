@@ -1,0 +1,29 @@
+{
+    "name": "workdo/account",
+    "description": "Description for account package",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Workdo\\Account\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\Account\\Providers\\AccountServiceProvider",
+                "Workdo\\Account\\Providers\\InvoicePayment",
+                "Workdo\\Account\\Providers\\RetainerPayment",
+                "Workdo\\Account\\Providers\\ViewComposer",
+                "Workdo\\Account\\Providers\\ProjectBillProvider"
+            ]
+        }
+    }
+}

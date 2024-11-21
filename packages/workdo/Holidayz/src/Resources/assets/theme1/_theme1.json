@@ -1,0 +1,534 @@
+[
+    {
+        "section_name": "Header",
+        "section_slug": "homepage-header",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-header-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Wellness & SPA",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub text",
+                "field_slug": "homepage-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-header-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/banner.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Intro",
+        "section_slug": "homepage-intro",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-intro-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Welcome to My Hotel",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-header-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/header/intro.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Room",
+        "section_slug": "homepage-rooms",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-categories-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Rooms & Suites",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-categories-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "There is only that moment and the incredible certainty that everything under the sun has been written by one hand only.",
+                "field_type": "text area"
+            }
+        ]
+    },
+    {
+        "section_name": "About Us",
+        "section_slug": "homepage-about-us",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-about-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "About Us",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum' will uncover many web sites still in their infancy.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Sub Description",
+                "field_slug": "homepage-about-sub-description",
+                "field_help_text": "Please add Sub description text here",
+                "field_default_text": "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/about.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Our Room",
+        "section_slug": "homepage-our-room",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-our-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Our Rooms",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for lorem ipsum' will uncover many web sites still in their infancy.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Sub Description",
+                "field_slug": "homepage-about-sub-description",
+                "field_help_text": "Please add Sub description text here",
+                "field_default_text": "Various versions have evolved over the years, sometimes by accident, sometimes on purpose (injected humour and the like).",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/room.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Amenities",
+        "section_slug": "homepage-amenities",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-amenities-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Amenities",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-amenities-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "field_type": "text area"
+            }
+        ]
+    },
+    {
+        "section_name": "Testimonial",
+        "section_slug": "homepage-testimonial",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "5",
+        "inner-list": [
+            {
+                "field_name": "Enable Testimonial",
+                "field_slug": "homepage-testimonial-card-enable",
+                "field_help_text": "",
+                "field_default_text": "Enable Testimonial",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Image",
+                "field_slug": "homepage-testimonial-card-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/avatar/avatar.png",
+                "field_type": "photo upload"
+            },
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-testimonial-card-title",
+                "field_help_text": "Please add title here",
+                "field_default_text": "Rajodiya Infotech",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub Text",
+                "field_slug": "homepage-testimonial-card-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "CEO Rajodiya Infotech",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-testimonial-card-description",
+                "field_help_text": "Please add sub description here",
+                "field_default_text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered randomised words which don't slightly believable.",
+                "field_type": "text area"
+            }
+        ]
+    },
+    {
+        "section_name": "Swimming Pool",
+        "section_slug": "homepage-swimming-pool",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-our-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Swimming Pool",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/swing.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Offers & News",
+        "section_slug": "homepage-blog",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "5",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-blog-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Best hotel attractions in 2022",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub Title",
+                "field_slug": "homepage-sub-title",
+                "field_help_text": "Please add Sub text here",
+                "field_default_text": "Inspirations",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Date",
+                "field_slug": "homepage-blog-date",
+                "field_help_text": "",
+                "field_default_text": "June 2, 2022",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Image",
+                "field_slug": "homepage-blog-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/blog1.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Instagram",
+        "section_slug": "homepage-instagram",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Images",
+                "field_slug": "homepage-images",
+                "field_help_text": "",
+                "field_default_text": "/theme1/social/insta1.png",
+                "field_type": "multi file upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Subscribe",
+                "field_slug": "homepage-subscribe-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Quick Link 1",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Footer Quick Link Header Name 1",
+                "field_slug": "homepage-footer-header-quick-link-name-1",
+                "field_help_text": "",
+                "field_default_text": "Navigation",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-1",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Home Pages",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-1",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Quick Link 2",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Footer Quick Link Header Name 2",
+                "field_slug": "homepage-footer-header-quick-link-name-2",
+                "field_help_text": "",
+                "field_default_text": "Navigation",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-2",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Home",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-2",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Footer Quick Link Header Name 3",
+                "field_slug": "homepage-footer-header-quick-link-name-3",
+                "field_help_text": "",
+                "field_default_text": "Company",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Enable Quick Link 3",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-3",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Terms and Policy",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-3",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Payment Method",
+                "field_slug": "homepage-payment-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Footer Note",
+                "field_slug": "homepage-footer-2-note",
+                "field_help_text": "Please add footer note here",
+                "field_default_text": "Copyright © 2022 Holidayz. All rights reserved.",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "6",
+        "inner-list": [
+            {
+                "field_name": "Social Link Icon",
+                "field_slug": "homepage-footer-2-social-icon",
+                "field_help_text": "Please click here to find font... fontawesome.com",
+                "field_default_text": "<i class='fab fa-youtube'></i>",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Social Link",
+                "field_slug": "homepage-footer-2-social-link",
+                "field_help_text": "Please add social link here",
+                "field_default_text": "https://www.youtube.com/",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Store Custom JS",
+                "field_slug": "homepage-footer-2-custom-js",
+                "field_help_text": "Please add custom js here",
+                "field_default_text": "console.log('Hello World!');",
+                "field_type": "text area"
+            }
+        ]
+    }
+]

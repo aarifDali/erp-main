@@ -1,0 +1,42 @@
+{
+    "name": "workdo/paypal",
+    "description": "Description for paypal package",
+    "type": "library",
+    "license": "MIT",
+    "require": {
+        "srmklive/paypal": "^3.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Workdo\\Paypal\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\Paypal\\Providers\\PaypalServiceProvider",
+                "Workdo\\Paypal\\Providers\\ViewComposer",
+                "Workdo\\Paypal\\Providers\\InvoicePayment",
+                "Workdo\\Paypal\\Providers\\RetainerPayment",
+                "Workdo\\Paypal\\Providers\\CoursePayment",
+                "Workdo\\Paypal\\Providers\\HotelRoomBookingPayment",
+                "Workdo\\Paypal\\Providers\\propertyInvoicePayment",
+                "Workdo\\Paypal\\Providers\\VehicleBookingPayment",
+                "Workdo\\Paypal\\Providers\\MembershipPlanPayment",
+                "Workdo\\Paypal\\Providers\\BeautySpaSerivceProvider",
+                "Workdo\\Paypal\\Providers\\ParkingSerivceProvider",
+                "Workdo\\Paypal\\Providers\\ContentPayment",
+                "Workdo\\Paypal\\Providers\\MovieShowBookingServiceProvider",
+                "Workdo\\Paypal\\Providers\\EventShowBookingServiceProvider",
+                "Workdo\\Paypal\\Providers\\BookingsServiceProvider",
+                "Workdo\\Paypal\\Providers\\FacilitiesSerivceProvider"
+            ]
+        }
+    }
+}

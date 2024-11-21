@@ -1,0 +1,35 @@
+# Laravel specific
+/vendor
+/node_modules
+/public/storage
+/public/hot
+/public/uploads
+/storage/*.key
+/storage/app/public
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/views
+/storage/logs
+.DS_Store
+.env
+.phpunit.result.cache
+
+# Ignoring compiled classes, logs, and other build artifacts
+composer.lock
+npm-debug.log
+yarn-error.log
+
+# Ignoring IDE-specific files
+.vscode
+.idea
+
+# Ignoring system-specific files
+*.DS_Store
+*.log
+*.swp
+*.bak
+*.tmp
+
+# Ignoring cached/compressed files
+*.zip
+*.tar.gz

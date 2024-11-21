@@ -1,0 +1,26 @@
+{
+    "name": "workdo/hrm",
+    "description": "Description for hrm package",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Workdo\\Hrm\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\Hrm\\Providers\\HrmServiceProvider",
+                "Workdo\\Hrm\\Providers\\BranchFields"
+            ]
+        }
+    }
+}

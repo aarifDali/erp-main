@@ -1,0 +1,576 @@
+[
+    {
+        "section_name": "Header",
+        "section_slug": "homepage-header",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-header-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Wellness & SPA",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub text",
+                "field_slug": "homepage-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "Discover The Perfect Balance Of Hospitality, Luxury And Comfort. We are focused on providing clients with the highest level\r\nof comfort and excellent affordable rates.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-header-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/banner.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Intro",
+        "section_slug": "homepage-intro",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-intro-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Welcome to My Hotel",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "It is our pleasure to welcome you to Happy Hotel. Whether you are travelling on business or pleasure, we know you have a variety of hotels to choose from. We strive to provide you with a room that is clean and comfortable, with friendly attentive service at a value-conscious price.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-header-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/header/intro.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Room",
+        "section_slug": "homepage-rooms",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-categories-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Rooms & Suites",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-categories-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "So when it comes to booking the perfect hotel, vacation rental, resort, apartment, guest house, or tree house, we’ve got you covered.",
+                "field_type": "text area"
+            }
+        ]
+    },
+    {
+        "section_name": "About Us",
+        "section_slug": "homepage-about-us",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-about-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "About Us",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "Built in 1990 , this hotel is located in the center of delhi, with easy access to the city’s tourist attractions. It offers tastefully decorated rooms.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Sub Description",
+                "field_slug": "homepage-about-sub-description",
+                "field_help_text": "Please add Sub description text here",
+                "field_default_text": "",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/about.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Our Room",
+        "section_slug": "homepage-our-room",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-our-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Our Rooms",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "The fact that we are run by hospitality professionals and equipped with the world best interior designers is why our rooms and suites are second to none in the universe.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Sub Description",
+                "field_slug": "homepage-about-sub-description",
+                "field_help_text": "Please add Sub description text here",
+                "field_default_text": "Standard Room , General Room, Luxury Room",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/room.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Amenities",
+        "section_slug": "homepage-amenities",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-amenities-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Amenities",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-amenities-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "You have access to 24-hours a day room service at our hotel. You have access to the world state of art restaurants and bars at our hotel. You have access to 24-hours free Wi-Fi services irrespective of any room.",
+                "field_type": "text area"
+            }
+        ]
+    },
+    {
+        "section_name": "Testimonial",
+        "section_slug": "homepage-testimonial",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "5",
+        "inner-list": [
+            {
+                "field_name": "Enable Testimonial",
+                "field_slug": "homepage-testimonial-card-enable",
+                "field_help_text": "",
+                "field_default_text": "Enable Testimonial",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Image",
+                "field_slug": "homepage-testimonial-card-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/avatar/avatar.png",
+                "field_type": "photo upload"
+            },
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-testimonial-card-title",
+                "field_help_text": "Please add title here",
+                "field_default_text": "Rajodiya Infotech",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub Text",
+                "field_slug": "homepage-testimonial-card-sub-text",
+                "field_help_text": "Please add sub text here",
+                "field_default_text": "CEO Rajodiya Infotech",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-testimonial-card-description",
+                "field_help_text": "Please add sub description here",
+                "field_default_text": "There are many variations of passages of Lorem Ipsum available, but the majority have suffered randomised words which don't slightly believable.",
+                "field_type": "text area"
+            }
+        ],
+        "homepage-testimonial-card-image": [
+            {
+                "field_prev_text": "/theme1/avatar/avatar.png"
+            },
+            {
+                "field_prev_text": "/theme1/avatar/avatar.png"
+            },
+            {
+                "field_prev_text": "/theme1/avatar/avatar.png"
+            },
+            {
+                "field_prev_text": "/theme1/avatar/avatar.png"
+            },
+            {
+                "field_prev_text": "/theme1/avatar/avatar.png"
+            }
+        ],
+        "homepage-testimonial-card-title": ["Rajodiya Infotech","Mark Essien","Fayemi David","Jean-Vital Domezon","Mark Essien"],
+        "homepage-testimonial-card-sub-text": ["CEO Rajodiya Infotech","Best Hotel","CEO Rajodiya Infotech","General Manager","Best Hotel"],
+        "homepage-testimonial-card-description": ["hotels makes you feel the best room quality that makes you feel the comfort of a home.","Words can't explain the kind of treatment I received from the management of star hotels. They are the best in the country.","My Family and I are very happy when we lodge into star hotels. They are by far the best in the universe.","hotels makes you feel the best room quality that makes you feel the comfort of a home.","Words can't explain the kind of treatment I received from the management of star hotels. They are the best in the country."]
+    },
+    {
+        "section_name": "Swimming Pool",
+        "section_slug": "homepage-swimming-pool",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-our-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Swimming Pool",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Description",
+                "field_slug": "homepage-about-description",
+                "field_help_text": "Please add description text here",
+                "field_default_text": "We are more than being a hotel because we are able to combine the quality standard of a hotel with the advantages of an apartment. Access to fitness and Spa is part of our hotel package when you make a booking. Swimming is a great exercise and an excellent way to release stress and promote relaxation. A dip in the pool can help guests unwind after a busy day and provide the perfect opportunity to kick back and enjoy the moment.",
+                "field_type": "text area"
+            },
+            {
+                "field_name": "Background Image",
+                "field_slug": "homepage-about-bg-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/swing.png",
+                "field_type": "photo upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Offers & News",
+        "section_slug": "homepage-blog",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "5",
+        "inner-list": [
+            {
+                "field_name": "Title",
+                "field_slug": "homepage-blog-title",
+                "field_help_text": "Please add title text here",
+                "field_default_text": "Best hotel attractions in 2022",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Sub Title",
+                "field_slug": "homepage-sub-title",
+                "field_help_text": "Please add Sub text here",
+                "field_default_text": "Inspirations",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Date",
+                "field_slug": "homepage-blog-date",
+                "field_help_text": "",
+                "field_default_text": "June 2, 2022",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Image",
+                "field_slug": "homepage-blog-image",
+                "field_help_text": "",
+                "field_default_text": "/theme1/banner/blog1.png",
+                "field_type": "photo upload"
+            }
+        ],
+        "homepage-blog-title": ["we give you a free coupon you can use and get 20% discount.","At Hotel we’re always happy to welcome our four-legged friends.","Best hotel attractions in 2023","Celebrate your new arrival with your loved one in style and create memories to treasure.","Make the festive season extra special with a getaway to Hotel happy"],
+        "homepage-sub-title": ["Discount","PAMPERED PETS","Inspirations","Luxury Babymoon","festival"],
+        "homepage-blog-date": ["Sep 15, 2023","Sep 15, 2023","June 2, 2023","Sep 15, 2023","June 2, 2022"],
+        "homepage-blog-image": [
+            {
+                "field_prev_text": "/theme1/banner/blog1.png"
+            },
+            {
+                "field_prev_text": "/theme1/banner/blog1.png"
+            },
+            {
+                "field_prev_text": "/theme1/banner/blog1.png"
+            },
+            {
+                "field_prev_text": "/theme1/banner/blog1.png"
+            },
+            {
+                "field_prev_text": "/theme1/banner/blog1.png"
+            }
+        ]
+    },
+    {
+        "section_name": "Instagram",
+        "section_slug": "homepage-instagram",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Images",
+                "field_slug": "homepage-images",
+                "field_help_text": "",
+                "field_default_text": "/theme1/social/insta1.png",
+                "field_type": "multi file upload"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Subscribe",
+                "field_slug": "homepage-subscribe-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Quick Link 1",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Footer Quick Link Header Name 1",
+                "field_slug": "homepage-footer-header-quick-link-name-1",
+                "field_help_text": "",
+                "field_default_text": "Navigation",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-1",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Home Pages",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-1",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Quick Link 2",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            },
+            {
+                "field_name": "Footer Quick Link Header Name 2",
+                "field_slug": "homepage-footer-header-quick-link-name-2",
+                "field_help_text": "",
+                "field_default_text": "Navigation",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-2",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Home",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-2",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Footer Quick Link Header Name 3",
+                "field_slug": "homepage-footer-header-quick-link-name-3",
+                "field_help_text": "",
+                "field_default_text": "Company",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Enable Quick Link 3",
+                "field_slug": "homepage-quick-link-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "4",
+        "inner-list": [
+            {
+                "field_name": "Quick Link",
+                "field_slug": "homepage-header-quick-link-name-3",
+                "field_help_text": "Please add link name here",
+                "field_default_text": "Terms and Policy",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Quick Link Url",
+                "field_slug": "homepage-header-quick-link-3",
+                "field_help_text": "Please add link here",
+                "field_default_text": "#",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-1",
+        "section_slug": "homepage-footer-1",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Enable Payment Method",
+                "field_slug": "homepage-payment-enable",
+                "field_help_text": "",
+                "field_default_text": "on",
+                "field_type": "checkbox"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Footer Note",
+                "field_slug": "homepage-footer-2-note",
+                "field_help_text": "Please add footer note here",
+                "field_default_text": "Copyright © 2023 Holidayz. All rights reserved.",
+                "field_type": "text"
+            }
+        ]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "multi-inner-list",
+        "loop_number": "6",
+        "inner-list": [
+            {
+                "field_name": "Social Link Icon",
+                "field_slug": "homepage-footer-2-social-icon",
+                "field_help_text": "Please click here to find font... fontawesome.com",
+                "field_default_text": "<i class='fab fa-youtube'></i>",
+                "field_type": "text"
+            },
+            {
+                "field_name": "Social Link",
+                "field_slug": "homepage-footer-2-social-link",
+                "field_help_text": "Please add social link here",
+                "field_default_text": "https://www.youtube.com/",
+                "field_type": "text"
+            }
+        ],
+        "homepage-footer-2-social-icon": ["<i class='fab fa-youtube'></i>","<i class='fab fa-whatsapp'></i>","<i class='fab fa-facebook'></i>","<i class='fab fa-skype'></i>","<i class='fab fa-github'></i>","<i class='fab fa-instagram'></i>"],
+        "homepage-footer-2-social-link": ["https://www.youtube.com/","https://www.whatsapp.com/","https://www.facebook.com/","https://www.skype.com/","https://www.github.com/","https://www.instagram.com/"]
+    },
+    {
+        "section_name": "Home-Footer-2",
+        "section_slug": "home-footer-2",
+        "section_enable": "on",
+        "array_type": "inner-list",
+        "loop_number": "1",
+        "inner-list": [
+            {
+                "field_name": "Store Custom JS",
+                "field_slug": "homepage-footer-2-custom-js",
+                "field_help_text": "Please add custom js here",
+                "field_default_text": "console.log('Hello World!');",
+                "field_type": "text area"
+            }
+        ]
+    }
+]

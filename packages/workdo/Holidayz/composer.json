@@ -1,0 +1,29 @@
+{
+    "name": "workdo/holidayz",
+    "description": "Description for holidayz package",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Workdo\\Holidayz\\": "src/"
+        },
+        "files": [
+            "src/Helpers/HolidayzHelper.php"
+        ]
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\Holidayz\\Providers\\HolidayzServiceProvider",
+                "Workdo\\Holidayz\\Providers\\RoomBookingServiceProvider"
+            ]
+        }
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "name": "Holidayz",
+    "alias": "Hotel&Room Management",
+    "description": "",
+    "priority": 90,
+    "version": 3.8,
+    "monthly_price": 0,
+    "yearly_price": 0,
+    "package_name": "holidayz"
+}

@@ -1,0 +1,25 @@
+{
+    "name": "workdo/product-service",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Workdo\\ProductService\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "WorkDo",
+            "email": "support@workdo.io"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\ProductService\\Providers\\ProductServiceServiceProvider"
+            ]
+        }
+    }
+}

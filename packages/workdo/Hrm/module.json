@@ -1,0 +1,14 @@
+{
+    "name": "Hrm",
+    "alias": "HRM",
+    "description": "",
+    "priority": 30,
+    "version": 3.8,
+    "monthly_price": 0,
+    "yearly_price": 0,
+    "child_module": [
+        "Performance",
+        "Training"
+    ],
+    "package_name": "hrm"
+}
