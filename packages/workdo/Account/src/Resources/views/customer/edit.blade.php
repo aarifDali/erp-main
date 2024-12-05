@@ -25,9 +25,9 @@
         </div>
         <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="form-group">
-                {{Form::label('tax_number',__('Tax Number'),['class'=>'form-label'])}}
+                {{Form::label('email',__('Email'),['class'=>'form-label'])}}
                 <div class="form-icon-user">
-                    {{Form::text('tax_number',null,array('class'=>'form-control','placeholder' => __('Enter Tax Number')))}}
+                    {{Form::email('email',!empty($user->email) ? $user->email :null,array('class'=>'form-control','placeholder' => __('Enter Email')))}}
                 </div>
             </div>
         </div>
@@ -40,9 +40,9 @@
             </div>
         @endif
     </div>
-    <h6 class="sub-title">{{__('Billing Address')}}</h6>
+    {{-- <h6 class="sub-title">{{__('Billing Address')}}</h6> --}}
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        {{-- <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
                 {{Form::label('billing_name',__('Name'),array('class'=>'','class'=>'form-label')) }}<x-required></x-required>
                 <div class="form-icon-user">
@@ -57,7 +57,7 @@
                     {{Form::text('billing_phone',null,array('class'=>'form-control','placeholder' => __('Enter Phone'), 'required' => 'required'))}}
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-md-12">
             <div class="form-group">
                 {{Form::label('billing_address',__('Address'),array('class'=>'form-label')) }}<x-required></x-required>
@@ -92,15 +92,15 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
-                {{Form::label('billing_zip',__('Zip Code'),array('class'=>'form-label')) }}<x-required></x-required>
+                {{Form::label('billing_zip',__('Zip Code'),array('class'=>'form-label')) }}
                 <div class="form-icon-user">
-                    {{Form::text('billing_zip',null,array('class'=>'form-control','placeholder' => __('Enter Zip Code'), 'required' => 'required'))}}
+                    {{Form::text('billing_zip',null,array('class'=>'form-control','placeholder' => __('Enter Zip Code')))}}
                 </div>
             </div>
         </div>
     </div>
 
-    @if (company_setting('invoice_shipping_display') == 'on' || company_setting('proposal_shipping_display') == 'on' )
+    {{-- @if (company_setting('invoice_shipping_display') == 'on' || company_setting('proposal_shipping_display') == 'on' )
         <div class="col-md-12 text-end">
             <a href="#" id="billing_data" value="" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
             title="{{ __('Shipping Same As Billing') }}"><i class="ti ti-copy"></i></a>
@@ -166,7 +166,7 @@
             </div>
 
         </div>
-    @endif
+    @endif --}}
 </div>
 <div class="modal-footer">
     <button type="button" class="btn  btn-light" data-bs-dismiss="modal">{{ __('Cancel') }}</button>

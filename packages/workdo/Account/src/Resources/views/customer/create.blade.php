@@ -24,7 +24,7 @@
             </div>
         </div>
         @stack('electronic_address')
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        {{-- <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="form-group">
                 {{ Form::label('password', __('Password'), ['class' => 'form-label']) }}<x-required></x-required>
                     {{ Form::password('password', ['class' => 'form-control', 'required' => 'required', 'minlength' => '6', 'placeholder' => 'Enter Password']) }}
@@ -35,7 +35,7 @@
                 {{ Form::label('tax_number', __('Tax Number'), ['class' => 'form-label']) }}
                     {{ Form::text('tax_number', null, ['class' => 'form-control', 'placeholder' => 'Enter Tax Number']) }}
             </div>
-        </div>
+        </div> --}}
         @if (module_is_active('CustomField') && !$customFields->isEmpty())
             <div class="col-md-12">
                 <div class="tab-pane fade show" id="tab-2" role="tabpanel">
@@ -45,9 +45,9 @@
         @endif
     </div>
 
-    <h5 class="sub-title mb-3">{{ __('Billing Address') }}</h5>
+    {{-- <h5 class="sub-title mb-3">{{ __('Billing Address') }}</h5> --}}
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        {{-- <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
                 {{ Form::label('billing_name', __('Name'), ['class' => '', 'class' => 'form-label']) }}<x-required></x-required>
                 <div class="form-icon-user">
@@ -62,7 +62,7 @@
                     {{ Form::text('billing_phone', null, ['class' => 'form-control', 'placeholder' => __('Enter Phone'), 'required' => 'required']) }}
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-md-12">
             <div class="form-group">
                 {{ Form::label('billing_address', __('Address'), ['class' => 'form-label']) }}<x-required></x-required>
@@ -104,7 +104,7 @@
             </div>
         </div>
     </div>
-    @if (company_setting('invoice_shipping_display') == 'on' || company_setting('proposal_shipping_display') == 'on' )
+    {{-- @if (company_setting('invoice_shipping_display') == 'on' || company_setting('proposal_shipping_display') == 'on' )
         <div class="col-md-12 text-end mb-2">
             <a href="#" id="billing_data" value="" class="btn btn-primary btn-sm" data-bs-toggle="tooltip" data-bs-placement="top"
             title="{{ __('Shipping Same As Billing') }}"><i class="ti ti-copy"></i></a>
@@ -170,7 +170,7 @@
             </div>
 
         </div>
-    @endif
+    @endif --}}
 </div>
 
 <div class="modal-footer">

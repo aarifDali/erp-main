@@ -76,8 +76,8 @@ class VenderController extends Controller
             $rules = [
                 'name' => 'required',
                 'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-                'billing_name' => 'required',
-                'billing_phone' => 'required',
+                // 'billing_name' => 'required',
+                // 'billing_phone' => 'required',
                 'billing_address' => 'required',
                 'billing_city' => 'required',
                 'billing_state' => 'required',
@@ -90,7 +90,7 @@ class VenderController extends Controller
             {
                 $rules = [
                     'email' => 'required|email|unique:users',
-                    'password' => 'required',
+                    // 'password' => 'required',
                     'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/|min:9',
 
                 ];
@@ -150,12 +150,12 @@ class VenderController extends Controller
             $vendor->name             = $request->name;
             $vendor->contact          = $request->contact;
             $vendor->email            = $user->email;
-            $vendor->tax_number       = $request->tax_number;
-            $vendor->billing_name     = $request->billing_name;
+            // $vendor->tax_number       = $request->tax_number;
+            // $vendor->billing_name     = $request->billing_name;
             $vendor->billing_country  = $request->billing_country;
             $vendor->billing_state    = $request->billing_state;
             $vendor->billing_city     = $request->billing_city;
-            $vendor->billing_phone    = $request->billing_phone;
+            // $vendor->billing_phone    = $request->billing_phone;
             $vendor->billing_zip      = $request->billing_zip;
             $vendor->billing_address  = $request->billing_address;
             if(company_setting('bill_shipping_display')=='on')
@@ -276,13 +276,13 @@ class VenderController extends Controller
             $rules = [
                 'name' => 'required',
                 'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-                'billing_name' => 'required',
-                'billing_phone' => 'required',
+                // 'billing_name' => 'required',
+                // 'billing_phone' => 'required',
                 'billing_address' => 'required',
                 'billing_city' => 'required',
                 'billing_state' => 'required',
                 'billing_country' => 'required',
-                'billing_zip' => 'required',
+                // 'billing_zip' => 'required',
             ];
 
 
@@ -291,7 +291,7 @@ class VenderController extends Controller
             if ($validator->fails()) {
                 $messages = $validator->getMessageBag();
 
-                return redirect()->route('vendor.index')->with('error', $messages->first());
+                return redirect()->route('vendors.index')->with('error', $messages->first());
             }
 
             $user = User::where('id',$request->user_id)->first();
@@ -309,15 +309,21 @@ class VenderController extends Controller
                 $user->mobile_no = $request->contact;
                 $user->save();
             }
+            if($user->email != $request->email)
+            {
+                $user->email = $request->email;
+                $user->save();
+            }
 
             $vendor->name             = $request->name;
             $vendor->contact          = $request->contact;
-            $vendor->tax_number       = $request->tax_number;
-            $vendor->billing_name     = $request->billing_name;
+            $vendor->email          = $request->email;
+            // $vendor->tax_number       = $request->tax_number;
+            // $vendor->billing_name     = $request->billing_name;
             $vendor->billing_country  = $request->billing_country;
             $vendor->billing_state    = $request->billing_state;
             $vendor->billing_city     = $request->billing_city;
-            $vendor->billing_phone    = $request->billing_phone;
+            // $vendor->billing_phone    = $request->billing_phone;
             $vendor->billing_zip      = $request->billing_zip;
             $vendor->billing_address  = $request->billing_address;
             $vendor->shipping_name    = $request->shipping_name;
