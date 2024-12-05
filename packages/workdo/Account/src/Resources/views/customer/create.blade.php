@@ -97,9 +97,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
-                {{ Form::label('billing_zip', __('Zip Code'), ['class' => 'form-label']) }}<x-required></x-required>
+                {{ Form::label('billing_zip', __('Zip Code'), ['class' => 'form-label']) }}
                 <div class="form-icon-user">
-                    {{ Form::text('billing_zip', null, ['class' => 'form-control', 'placeholder' => __('Enter Zip Code'), 'required' => 'required']) }}
+                    {{ Form::text('billing_zip', null, ['class' => 'form-control', 'placeholder' => __('Enter Zip Code')]) }}
                 </div>
             </div>
         </div>
