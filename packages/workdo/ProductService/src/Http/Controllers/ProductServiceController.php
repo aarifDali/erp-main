@@ -223,6 +223,14 @@ class ProductServiceController extends Controller
             ];
             return response()->json($response);
         }
+        else {
+            $response = [
+                'is_success' => false,
+                'message' => '',
+                'html' => '',
+            ];
+            return response()->json($response);
+        }
     }
 
     /**
