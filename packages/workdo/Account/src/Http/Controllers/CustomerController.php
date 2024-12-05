@@ -75,13 +75,13 @@ class CustomerController extends Controller
             $rules = [
                 'name' => 'required',
                 'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-                'billing_name' => 'required',
-                'billing_phone' => 'required',
+                // 'billing_name' => 'required',
+                // 'billing_phone' => 'required',
                 'billing_address' => 'required',
                 'billing_city' => 'required',
                 'billing_state' => 'required',
                 'billing_country' => 'required',
-                'billing_zip' => 'required',
+                // 'billing_zip' => 'required',
             ];
 
             $validator = \Validator::make($request->all(), $rules);
@@ -93,7 +93,7 @@ class CustomerController extends Controller
                                         return $query->where('created_by', creatorId())->where('workspace_id',getActiveWorkSpace());
                                     })
                         ],
-                    'password' => 'required',
+                    // 'password' => 'required',
                     'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
                 ];
                 $validator = \Validator::make($request->all(), $rules);
@@ -155,23 +155,23 @@ class CustomerController extends Controller
             $customer->name            = !empty($request->name) ? $request->name : null;
             $customer->contact         = !empty($request->contact) ? $request->contact : null;
             $customer->email           = !empty($user->email) ? $user->email : null;
-            $customer->tax_number      = !empty($request->tax_number) ? $request->tax_number : null;
-            $customer->password        = null;
-            $customer->billing_name    = !empty($request->billing_name) ? $request->billing_name : null;
+            // $customer->tax_number      = !empty($request->tax_number) ? $request->tax_number : null;
+            // $customer->password        = null;
+            // $customer->billing_name    = !empty($request->billing_name) ? $request->billing_name : null;
             $customer->billing_country = !empty($request->billing_country) ? $request->billing_country : null;
             $customer->billing_state   = !empty($request->billing_state) ? $request->billing_state : null;
             $customer->billing_city    = !empty($request->billing_city) ? $request->billing_city : null;
-            $customer->billing_phone   = !empty($request->billing_phone) ? $request->billing_phone : null;
+            // $customer->billing_phone   = !empty($request->billing_phone) ? $request->billing_phone : null;
             $customer->billing_zip     = !empty($request->billing_zip) ? $request->billing_zip : null;
             $customer->billing_address = !empty($request->billing_address) ? $request->billing_address : null;
 
-            $customer->shipping_name    = !empty($request->shipping_name) ? $request->shipping_name : null;
-            $customer->shipping_country = !empty($request->shipping_country) ? $request->shipping_country : null;
-            $customer->shipping_state   = !empty($request->shipping_state) ? $request->shipping_state : null;
-            $customer->shipping_city    = !empty($request->shipping_city) ? $request->shipping_city : null;
-            $customer->shipping_phone   = !empty($request->shipping_phone) ? $request->shipping_phone : null;
-            $customer->shipping_zip     = !empty($request->shipping_zip) ? $request->shipping_zip : null;
-            $customer->shipping_address = !empty($request->shipping_address) ? $request->shipping_address : null;
+            // $customer->shipping_name    = !empty($request->shipping_name) ? $request->shipping_name : null;
+            // $customer->shipping_country = !empty($request->shipping_country) ? $request->shipping_country : null;
+            // $customer->shipping_state   = !empty($request->shipping_state) ? $request->shipping_state : null;
+            // $customer->shipping_city    = !empty($request->shipping_city) ? $request->shipping_city : null;
+            // $customer->shipping_phone   = !empty($request->shipping_phone) ? $request->shipping_phone : null;
+            // $customer->shipping_zip     = !empty($request->shipping_zip) ? $request->shipping_zip : null;
+            // $customer->shipping_address = !empty($request->shipping_address) ? $request->shipping_address : null;
             $customer->lang             = !empty($user->lang) ? $user->lang : '';
 
             $customer->workspace        = getActiveWorkSpace();
@@ -282,13 +282,14 @@ class CustomerController extends Controller
             $rules = [
                 'name' => 'required',
                 'contact' => 'required|regex:/^([0-9\s\-\+\(\)]*)$/',
-                'billing_name' => 'required',
-                'billing_phone' => 'required',
+                'email' => 'required',
+                // 'billing_name' => 'required',
+                // 'billing_phone' => 'required',
                 'billing_address' => 'required',
                 'billing_city' => 'required',
                 'billing_state' => 'required',
                 'billing_country' => 'required',
-                'billing_zip' => 'required',
+                // 'billing_zip' => 'required',
             ];
 
             $validator = \Validator::make($request->all(), $rules);
@@ -312,25 +313,31 @@ class CustomerController extends Controller
                 $user->mobile_no = $request->contact;
                 $user->save();
             }
+            if($user->email != $request->email)
+            {
+                $user->email = $request->email;
+                $user->save();
+            }
 
             $customer                   = Customer::find($id);
             $customer->name             = $request->name;
             $customer->contact          = $request->contact;
-            $customer->tax_number       = $request->tax_number;
-            $customer->billing_name     = $request->billing_name;
+            $customer->email          = $request->email;
+            // $customer->tax_number       = $request->tax_number;
+            // $customer->billing_name     = $request->billing_name;
             $customer->billing_country  = $request->billing_country;
             $customer->billing_state    = $request->billing_state;
             $customer->billing_city     = $request->billing_city;
-            $customer->billing_phone    = $request->billing_phone;
+            // $customer->billing_phone    = $request->billing_phone;
             $customer->billing_zip      = $request->billing_zip;
             $customer->billing_address  = $request->billing_address;
-            $customer->shipping_name    = $request->shipping_name;
-            $customer->shipping_country = $request->shipping_country;
-            $customer->shipping_state   = $request->shipping_state;
-            $customer->shipping_city    = $request->shipping_city;
-            $customer->shipping_phone   = $request->shipping_phone;
-            $customer->shipping_zip     = $request->shipping_zip;
-            $customer->shipping_address = $request->shipping_address;
+            // $customer->shipping_name    = $request->shipping_name;
+            // $customer->shipping_country = $request->shipping_country;
+            // $customer->shipping_state   = $request->shipping_state;
+            // $customer->shipping_city    = $request->shipping_city;
+            // $customer->shipping_phone   = $request->shipping_phone;
+            // $customer->shipping_zip     = $request->shipping_zip;
+            // $customer->shipping_address = $request->shipping_address;
             $customer->save();
 
             if(module_is_active('CustomField'))

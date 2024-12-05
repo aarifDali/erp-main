@@ -27,7 +27,7 @@
             </div>
         </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-6">
+        {{-- <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="form-group">
                 {{Form::label('password',__('Password'),['class'=>'form-label'])}}<x-required></x-required>
                 <div class="form-icon-user">
@@ -42,7 +42,7 @@
                     {{Form::text('tax_number',null,array('class'=>'form-control','placeholder'=>'Enter Tax Number'))}}
                 </div>
             </div>
-        </div>
+        </div> --}}
         @if (module_is_active('CustomField') && !$customFields->isEmpty())
             <div class="col-md-12">
                 <div class="tab-pane fade show" id="tab-2" role="tabpanel">
@@ -51,9 +51,9 @@
             </div>
         @endif
     </div>
-    <h6 class="sub-title">{{__('BIlling Address')}}</h6>
+    {{-- <h6 class="sub-title">{{__('BIlling Address')}}</h6> --}}
     <div class="row">
-        <div class="col-lg-6 col-md-6 col-sm-6">
+        {{-- <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
                 {{Form::label('billing_name',__('Name'),array('class'=>'form-label')) }}<x-required></x-required>
                 <div class="form-icon-user">
@@ -68,7 +68,7 @@
                     {{Form::text('billing_phone',null,array('class'=>'form-control','placeholder'=>'Enter Phone','required'=>'required'))}}
                 </div>
             </div>
-        </div>
+        </div> --}}
         <div class="col-md-12">
             <div class="form-group">
                 {{Form::label('billing_address',__('Address'),array('class'=>'form-label')) }}<x-required></x-required>
@@ -103,9 +103,9 @@
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6">
             <div class="form-group">
-                {{Form::label('billing_zip',__('Zip Code'),array('class'=>'form-label')) }}<x-required></x-required>
+                {{Form::label('billing_zip',__('Zip Code'),array('class'=>'form-label')) }}
                 <div class="form-icon-user">
-                    {{Form::text('billing_zip',null,array('class'=>'form-control','placeholder'=>__(''),'placeholder'=>'Enter Zip Code','required'=>'required'))}}
+                    {{Form::text('billing_zip',null,array('class'=>'form-control','placeholder'=>__(''),'placeholder'=>'Enter Zip Code'))}}
                 </div>
             </div>
         </div>
