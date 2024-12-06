@@ -11,7 +11,7 @@
     </div>
 </div>
 
-<script>
+{{-- <script>
     $(document).ready(function() {
         var total_selection = 0;
 
@@ -46,6 +46,124 @@
                     }
                 }
             }
+
+            total_selection = Object.keys(column_data).length;
+            if (total_selection == 7) {
+                $("#import").removeAttr("disabled");
+                name = column_data.name;
+                sku = column_data.sku;
+                sale_price = column_data.sale_price;
+                purchase_price = column_data.purchase_price;
+                quantity = column_data.quantity;
+                type = column_data.type;
+                description = column_data.description;
+            } else {
+                $('#import').attr('disabled', 'disabled');
+            }
+
+        });
+
+        $(document).on('click', '#import', function(event) {
+
+            event.preventDefault();
+
+            $.ajax({
+                url: "{{ route('product-service.import.data') }}",
+                method: "POST",
+                data: {
+                    name: name,
+                    sku: sku,
+                    sale_price: sale_price,
+                    purchase_price: purchase_price,
+                    quantity: quantity,
+                    type: type,
+                    description: description,
+                    _token: "{{ csrf_token() }}"
+                },
+                beforeSend: function() {
+                    $('#import').attr('disabled', 'disabled');
+                    $('#import').text('Importing...');
+                },
+                success: function(data) {
+                    $('#import').attr('disabled', false);
+                    $('#import').text('Import');
+                    $('#upload_form')[0].reset();
+
+                    if (data.html == true) {
+                        $('#process_area').html(data.response);
+                        $("button").hide();
+                        toastrs('Error', 'These data are not inserted', 'error');
+
+                    } else {
+                        $('#message').html(data.response);
+                        $('#commonModalOver').modal('hide')
+                        toastrs('Success', data.response, 'success');
+                        location.reload();
+                    }
+
+                }
+            })
+
+        });
+    });
+</script> --}}
+
+<script>
+    $(document).ready(function() {
+        
+        function refreshColumnHeadings() {
+            $('.set_column_data').each(function() {
+                var column_number = $(this).data('column_number');
+                var column_name = $(this).val();
+                // Update UI elements dynamically if required
+                console.log('Column number:', column_number, 'Column name:', column_name);
+            });
+        }
+
+        var total_selection = 0;
+
+        var first_name = 0;
+
+        var last_name = 0;
+
+        var email = 0;
+
+        var column_data = [];
+
+        $(document).on('change', '.set_column_data', function() {
+            var column_name = $(this).val();
+
+            var column_number = $(this).data('column_number');
+
+            if (column_name in column_data && column_data[column_name] !== column_number) {
+                toastrs('Error', 'You have already defined ' + column_name + ' column', 'error');
+                $(this).val('');
+                return false;
+            }
+
+            
+            if (column_name != '') {
+                // Remove previous mapping for this column
+                const entries = Object.entries(column_data);
+                for (const [key, value] of entries) {
+                    if (value == column_number) {
+                        delete column_data[key];
+                    }
+                }
+
+                // Add new mapping
+                column_data[column_name] = column_number;
+            } else {
+                // Clear the mapping if column_name is empty
+                const entries = Object.entries(column_data);
+                for (const [key, value] of entries) {
+                    if (value == column_number) {
+                        delete column_data[key];
+                    }
+                }
+            }
+
+            refreshColumnHeadings();
 
             total_selection = Object.keys(column_data).length;
             if (total_selection == 7) {
