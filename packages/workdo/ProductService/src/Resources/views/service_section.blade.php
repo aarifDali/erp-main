@@ -37,15 +37,7 @@
                                     ])
                                 @endif
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        {{ Form::label('name', __('Name'), ['class' => 'form-label']) }}<x-required></x-required>
-                                        <div class="form-icon-user">
-                                            {{ Form::text('name',!empty($productService->name)?$productService->name:'', ['class' => 'form-control','required' => 'required']) }}
-                                        </div>
-                                    </div>
-                                </div>
+                            {{-- <div class="row">                                
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         {{ Form::label('sku', __('SKU'), ['class' => 'form-label']) }}<x-required></x-required>
@@ -55,14 +47,22 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
 
                             <div class="row">
-                                <div class="form-group col-md-6">
-                                    {{ Form::label('tax_id', __('Tax'), ['class' => 'form-label']) }}
-                                    {{ Form::select('tax_id[]', $tax, !empty($productService->tax_id)?explode(',', $productService->tax_id):'', ['class' => 'form-control choices tax_data', 'id' => 'choices-multiple1', 'multiple']) }}
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        {{ Form::label('name', __('Name'), ['class' => 'form-label']) }}<x-required></x-required>
+                                        <div class="form-icon-user">
+                                            {{ Form::text('name',!empty($productService->name)?$productService->name:'', ['class' => 'form-control','required' => 'required']) }}
+                                        </div>
+                                    </div>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
+                                    {{ Form::label('tax_id', __('Tax'), ['class' => 'form-label']) }}<x-required></x-required>
+                                    {{ Form::select('tax_id[]', $tax, !empty($productService->tax_id)?explode(',', $productService->tax_id):'', ['class' => 'form-control choices tax_data', 'id' => 'choices-multiple1', 'multiple', 'required' => 'required']) }}
+                                </div>
+                                <div class="form-group col-md-4">
                                     {{ Form::label('category_id', __('Category'), ['class' => 'form-label']) }}<x-required></x-required>
                                     {{ Form::select('category_id', $category, !empty($productService->category_id)?$productService->category_id:'', ['class' => 'form-control', 'required' => 'required']) }}
 
@@ -103,19 +103,19 @@
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
+                                {{-- <div class="col-md-6">
                                     <div class="form-group">
                                         {{ Form::label('purchase_price', __('Purchase Price'), ['class' => 'form-label']) }}<x-required></x-required>
                                         <div class="form-icon-user">
                                             {{ Form::number('purchase_price', !empty($productService->sale_price)?$productService->sale_price:'', ['class' => 'form-control', 'step' => '0.01','required' => 'required']) }}
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
                                 @stack('add_column_in_productservice')
-                                <div class="form-group col-md-6">
+                                {{-- <div class="form-group col-md-6">
                                     {{ Form::label('unit_id', __('Unit'), ['class' => 'form-label']) }}<x-required></x-required>
                                     {{ Form::select('unit_id', $unit, !empty($productService->unit_id)?$productService->unit_id:'', ['class' => 'form-control', 'required' => 'required']) }}
-                                </div>
+                                </div> --}}
                                 @if($type != 'service')
                                 <div class="form-group col-md-6 quantity">
                                     {{ Form::label('quantity', __('Quantity'), ['class' => 'form-label']) }}<x-required></x-required>

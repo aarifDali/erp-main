@@ -244,14 +244,16 @@ class ProductServiceController extends Controller
         {
             $rules = [
                 'name' => 'required',
-                'sku' => 'required',
                 'sale_price' => 'required|numeric',
-                'purchase_price' => 'required|numeric',
                 'category_id' => 'required',
-                'unit_id' => 'required',
                 'type' => 'required',
                 'tax_id' => 'required',
             ];
+            if ($request->type != 'service') {
+                $rules['sku'] = 'required';
+                $rules['purchase_price'] = 'required|numeric';
+                $rules['unit_id'] = 'required';
+            }
 
             $validator = \Validator::make($request->all(), $rules);
 
@@ -441,15 +443,17 @@ class ProductServiceController extends Controller
 
             $rules = [
                 'name' => 'required',
-                'sku' => 'required',
                 'sale_price' => 'required|numeric',
-                'purchase_price' => 'required|numeric',
                 'category_id' => 'required',
-                'unit_id' => 'required',
                 'type' => 'required',
                 'tax_id' => 'required',
 
             ];
+            if ($request->type != 'service') {
+                $rules['sku'] = 'required';
+                $rules['purchase_price'] = 'required|numeric';
+                $rules['unit_id'] = 'required';
+            }
 
             $validator = \Validator::make($request->all(), $rules);
 
