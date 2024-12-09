@@ -13,6 +13,16 @@
 
 <script>
     $(document).ready(function() {
+
+        function refreshColumnHeadings() {
+            $('.set_column_data').each(function() {
+                var column_number = $(this).data('column_number');
+                var column_name = $(this).val();
+                
+                console.log('Column number:', column_number, 'Column name:', column_name);
+            });
+        }
+
         var total_selection = 0;
 
         var first_name = 0;
@@ -28,18 +38,23 @@
 
             var column_number = $(this).data('column_number');
 
-            if (column_name in column_data) {
-
-                toastrs('Error', 'You have already define ' + column_name + ' column', 'error');
-
+            if (column_name in column_data && column_data[column_name] !== column_number) {
+                toastrs('Error', 'You have already defined ' + column_name + ' column', 'error');
                 $(this).val('');
                 return false;
             }
-            if (column_name != '') {
+
+            if (column_name != '') {                
+                const entries = Object.entries(column_data);
+                for (const [key, value] of entries) {
+                    if (value == column_number) {
+                        delete column_data[key];
+                    }
+                }
+
                 column_data[column_name] = column_number;
             } else {
                 const entries = Object.entries(column_data);
-
                 for (const [key, value] of entries) {
                     if (value == column_number) {
                         delete column_data[key];
@@ -47,8 +62,10 @@
                 }
             }
 
+            refreshColumnHeadings();
+
             total_selection = Object.keys(column_data).length;
-            if (total_selection == 13) {
+            if (total_selection == 14) {
                 $("#import").removeAttr("disabled");
                 name = column_data.name;
                 dob = column_data.dob;
@@ -62,6 +79,7 @@
                 account_number = column_data.account_number;
                 bank_name = column_data.bank_name;
                 bank_identifier_code = column_data.bank_identifier_code;
+                branch_location = column_data.branch_location;
                 tax_payer_id = column_data.tax_payer_id;
             } else {
                 $('#import').attr('disabled', 'disabled');
@@ -116,6 +134,7 @@
                     account_number: account_number,
                     bank_name: bank_name,
                     bank_identifier_code: bank_identifier_code,
+                    branch_location: branch_location,
                     tax_payer_id: tax_payer_id,
                     branch: branch,
                     department: department,
