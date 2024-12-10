@@ -387,6 +387,52 @@
             });
         });
     </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const vendorModal = document.getElementById('createVendorModal');
+            const vendorFormContainer = document.getElementById('vendorFormContainer');
+            const vendorDropdown = document.getElementById('vender'); // ID of the vendor dropdown
+
+            // Attach submit event to the vendor creation form
+            vendorModal.addEventListener('submit', function (event) {
+                if (event.target.tagName === 'FORM') {
+                    event.preventDefault();
+                    const form = event.target;
+
+                    fetch(form.action, {
+                        method: form.method,
+                        body: new FormData(form),
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            if (data.success) {
+                                // Hide the modal
+                                $(vendorModal).modal('hide');
+                                toastrs('Success', 'New vendor created successfully.', 'success');
+
+                                location.reload();
+
+                                // Update the vendor dropdown
+                                // const newOption = new Option(data.vendor.name, data.vendor.id);
+                                // vendorDropdown.add(newOption);
+
+                                // // Optionally, select the newly created vendor
+                                // vendorDropdown.value = data.vendor.id;
+                            } else {
+                                toastrs('Error', data.error || 'Failed to create vendor.', 'error');
+                                console.error('Error creating vendor:', data.error);
+                            }
+                        })
+                        .catch(error => {
+                            toastrs('Error', 'Something went wrong.', 'error');
+                            console.error('Submission error:', error);
+                        });
+                }
+            });
+        });
+    </script>
+
 @endpush
 
 @php
@@ -429,14 +475,19 @@
                                             {{ Form::select('vender_id', $venders, $vendorId, ['class' => 'form-control select', 'id' => 'vender', 'data-url' => route('purchases.vender'), 'required' => 'required']) }}
 
                                             @if (empty($venders->count()))
-                                            <div class=" text-xs">
-                                                {{ __('Please create vendor/Client first.') }}
-                                                <a
-                                                    @if (module_is_active('Account')) href="{{ route('vendors.index') }}"  @else href="{{ route('users.index') }}" @endif><b>{{ __('Create vendor/Client') }}</b></a>
+                                                <div class=" text-xs">
+                                                    {{ __('Please create vendor/Client first.') }}
+                                                    <a
+                                                        @if (module_is_active('Account')) href="{{ route('vendors.index') }}"  @else href="{{ route('users.index') }}" @endif><b>{{ __('Create vendor/Client') }}</b></a>
+                                                </div>
+                                            @endif
+                                            <div class="text-xs">
+                                                {{ __('Add new vendor.') }}
+                                                <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#createVendorModal" id="openCreateVendor">
+                                                    <b>{{ __('New Vendor') }}</b>
+                                                </a>
                                             </div>
-                                        @endif
                                         </div>
-
                                     @else
                                         <div class="form-group">
                                             {{ Form::label('vender_name', __('Vendor'), ['class' => 'form-label']) }}<x-required></x-required>
@@ -674,6 +725,20 @@
             <input type="submit" value="{{ __('Create') }}" class="btn  btn-primary" id="submit">
         </div>
         {{ Form::close() }}
+    </div>
+    <!-- Vendor Creation Modal -->
+    <div class="modal fade" id="createVendorModal" tabindex="-1" aria-labelledby="createVendorLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createVendorLabel">{{ __('New Vendor') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="vendorFormContainer">
+                    @include('account::vendor.create') <!-- Adjust the path to your vendor creation form -->
+                </div>
+            </div>
+        </div>
     </div>
 
 @endsection

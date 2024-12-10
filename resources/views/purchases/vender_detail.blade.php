@@ -13,7 +13,7 @@
                     </small>
                 </div>
             </div>
-            <div class="col-md-5">
+            {{-- <div class="col-md-5">
                 <h6>{{__('Ship to')}}</h6>
                 <div class="bill-to">
                     <small>
@@ -24,7 +24,7 @@
                         <span>{{$vender['shipping_phone']}}</span><br>
                     </small>
                 </div>
-            </div>
+            </div> --}}
         @else
             <div class="col-md-10">
                     <div class="mt-3"><h6>{{$vender['name']}}</h6><h6>{{$vender['email']}}</h6></div>

@@ -178,6 +178,12 @@ class VenderController extends Controller
             }
 
             event(new CreateVendor($request,$vendor));
+            
+            return response()->json([
+                'success' => true,
+                'message' => __('Vendor created successlly'),  
+                'vendor' => ['id' => $vendor->id, 'name' => $vendor->name],
+            ]);
 
             return redirect()->back()->with('success', __('The vendor has been created successfully.'));
         }
