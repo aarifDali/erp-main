@@ -53,12 +53,12 @@
                                         <option value="">{{ __('Please Select') }}</option>
 
                                     </select>
-                                    @if (empty($customers->count()))
-                                        <div class=" text-xs">
-                                            {{ __('Please create Customer/Client first.') }}<a
-                                                @if (module_is_active('Account')) href="{{ route('customer.index') }}"  @else href="{{ route('users.index') }}" @endif><b>{{ __('Create Customer/Client') }}</b></a>
-                                        </div>
-                                    @endif
+                                    <div class="text-xs">
+                                        {{ __('Add new customer.') }}
+                                        <a href="#" class="text-primary" data-bs-toggle="modal" data-bs-target="#createCustomerModal" id="openCreateCustomer">
+                                            <b>{{ __('New Customer') }}</b>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
                             <div id="customer_detail" class="d-none">
@@ -197,6 +197,22 @@
         {{ Form::close() }}
 
     </div>
+
+    <!-- Customer Creation Modal  -->
+    <div class="modal fade" id="createCustomerModal" tabindex="-1" aria-labelledby="createCustomerLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="createCustomerLabel">{{ __('New Customer') }}</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" id="customerFormContainer">
+                    @include('account::customer.create')
+                </div>
+            </div>
+        </div>
+    </div>
+    
 @endsection
 
 @push('scripts')
@@ -204,6 +220,41 @@
     <script src="{{ asset('js/jquery.repeater.min.js') }}"></script>
     <script src="{{ asset('js/jquery-searchbox.js') }}"></script>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        
+            document.getElementById('customerFormContainer').addEventListener('submit', function (event) {
+                event.preventDefault();
+                const form = event.target;
+        
+                fetch(form.action, {
+                    method: form.method,
+                    body: new FormData(form),
+                })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.success) {
+                        
+                            $('#createCustomerModal').modal('hide');
+                            toastrs('Success', 'New customer created successfully.', 'success');
+                            // Update the customer dropdown
+
+                            const customerDropdown = document.getElementById('customer');
+                            const newOption = new Option(data.customer.name, data.customer.id);
+                            customerDropdown.add(newOption);
+
+                            // $(customerDropdown).val(data.customer.id).change();
+                            
+                            location.reload();
+
+                        } else {
+                            console.error('Error creating customer:', data.error);
+                        }
+                    })
+                    .catch(error => console.error('Submission error:', error));
+            });
+        });
+    </script>
     <script>
         $(document).ready(function() {
             var customerId = '{{ $customerId }}';

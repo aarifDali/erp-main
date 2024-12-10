@@ -13,6 +13,16 @@
 
 <script>
     $(document).ready(function() {
+
+        function refreshColumnHeadings() {
+            $('.set_column_data').each(function() {
+                var column_number = $(this).data('column_number');
+                var column_name = $(this).val();
+                
+                console.log('Column number:', column_number, 'Column name:', column_name);
+            });
+        }
+
         var total_selection = 0;
 
         var first_name = 0;
@@ -28,24 +38,31 @@
 
             var column_number = $(this).data('column_number');
 
-            if (column_name in column_data) {
-
-                toastrs('Error', 'You have already define ' + column_name + ' column', 'error');
-
+            if (column_name in column_data && column_data[column_name] !== column_number) {
+                toastrs('Error', 'You have already defined ' + column_name + ' column', 'error');
                 $(this).val('');
                 return false;
             }
-            if (column_name != '') {
+
+            if (column_name != '') {                
+                const entries = Object.entries(column_data);
+                for (const [key, value] of entries) {
+                    if (value == column_number) {
+                        delete column_data[key];
+                    }
+                }
+
                 column_data[column_name] = column_number;
             } else {
                 const entries = Object.entries(column_data);
-
                 for (const [key, value] of entries) {
                     if (value == column_number) {
                         delete column_data[key];
                     }
                 }
             }
+
+            refreshColumnHeadings();
 
             total_selection = Object.keys(column_data).length;
             if (total_selection == 6) {

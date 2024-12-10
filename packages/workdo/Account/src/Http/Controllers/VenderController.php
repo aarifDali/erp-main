@@ -151,22 +151,22 @@ class VenderController extends Controller
             $vendor->contact          = $request->contact;
             $vendor->email            = $user->email;
             // $vendor->tax_number       = $request->tax_number;
-            // $vendor->billing_name     = $request->billing_name;
+            $vendor->billing_name     = $request->name;
             $vendor->billing_country  = $request->billing_country;
             $vendor->billing_state    = $request->billing_state;
             $vendor->billing_city     = $request->billing_city;
-            // $vendor->billing_phone    = $request->billing_phone;
+            $vendor->billing_phone    = $request->contact;
             $vendor->billing_zip      = $request->billing_zip;
             $vendor->billing_address  = $request->billing_address;
             if(company_setting('bill_shipping_display')=='on')
             {
-                $vendor->shipping_name    = $request->shipping_name;
-                $vendor->shipping_country = $request->shipping_country;
-                $vendor->shipping_state   = $request->shipping_state;
-                $vendor->shipping_city    = $request->shipping_city;
-                $vendor->shipping_phone   = $request->shipping_phone;
-                $vendor->shipping_zip     = $request->shipping_zip;
-                $vendor->shipping_address = $request->shipping_address;
+                $vendor->shipping_name    = $request->name;
+                $vendor->shipping_country = $request->billing_country;
+                $vendor->shipping_state   = $request->billing_state;
+                $vendor->shipping_city    = $request->billing_city;
+                $vendor->shipping_phone   = $request->contact;
+                $vendor->shipping_zip     = $request->billing_zip;
+                $vendor->shipping_address = $request->billing_address;
             }
             $vendor->lang             = $user->lang;
             $vendor->created_by       = creatorId();
@@ -178,6 +178,12 @@ class VenderController extends Controller
             }
 
             event(new CreateVendor($request,$vendor));
+            
+            return response()->json([
+                'success' => true,
+                'message' => __('Vendor created successlly'),  
+                'vendor' => ['id' => $vendor->id, 'name' => $vendor->name],
+            ]);
 
             return redirect()->back()->with('success', __('The vendor has been created successfully.'));
         }
@@ -319,20 +325,20 @@ class VenderController extends Controller
             $vendor->contact          = $request->contact;
             $vendor->email          = $request->email;
             // $vendor->tax_number       = $request->tax_number;
-            // $vendor->billing_name     = $request->billing_name;
+            $vendor->billing_name     = $request->name;
             $vendor->billing_country  = $request->billing_country;
             $vendor->billing_state    = $request->billing_state;
             $vendor->billing_city     = $request->billing_city;
-            // $vendor->billing_phone    = $request->billing_phone;
+            $vendor->billing_phone    = $request->contact;
             $vendor->billing_zip      = $request->billing_zip;
             $vendor->billing_address  = $request->billing_address;
-            $vendor->shipping_name    = $request->shipping_name;
-            $vendor->shipping_country = $request->shipping_country;
-            $vendor->shipping_state   = $request->shipping_state;
-            $vendor->shipping_city    = $request->shipping_city;
-            $vendor->shipping_phone   = $request->shipping_phone;
-            $vendor->shipping_zip     = $request->shipping_zip;
-            $vendor->shipping_address = $request->shipping_address;
+            $vendor->shipping_name    = $request->name;
+            $vendor->shipping_country = $request->billing_country;
+            $vendor->shipping_state   = $request->billing_state;
+            $vendor->shipping_city    = $request->billing_city;
+            $vendor->shipping_phone   = $request->contact;
+            $vendor->shipping_zip     = $request->billing_zip;
+            $vendor->shipping_address = $request->billing_address;
             $vendor->save();
             if(module_is_active('CustomField'))
             {

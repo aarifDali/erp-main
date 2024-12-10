@@ -185,6 +185,12 @@ class CustomerController extends Controller
             }
             event(new CreateCustomer($request,$customer));
 
+            return response()->json([
+                'success' => true,
+                'message' => __('Customer created successlly'),  
+                'customer' => ['user_id' => $customer->user_id, 'name' => $customer->name],
+            ]);
+
             return redirect()->back()->with('success', __('The customer has been created successfully.'));
 
         }
