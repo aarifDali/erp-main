@@ -439,6 +439,11 @@ class EmployeeController extends Controller
                 }
                 event(new DestroyEmployee($employee));
                 $employee->delete();
+
+                $user = User::find($employee->user_id);
+                if (!empty($user)) {
+                    $user->delete();
+            }
             } else {
                 return redirect()->back()->with('error', __('employee already delete.'));
             }
