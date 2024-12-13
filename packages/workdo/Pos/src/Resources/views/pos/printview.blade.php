@@ -45,40 +45,36 @@
         </div>
         </tbody>
     </table>
-    <div class=" text-black text-left fs-5 mt-0 mb-0">{{__('Items')}}</div>
+    <div class="text-black text-left fs-5 mt-0 mb-0">{{ __('Items') }}</div>
     @if (array_key_exists('data', $sales))
-        @foreach ($sales['data'] as $key => $value)
-            <div class="mt-2">
-                <div class="p-0"> <b>{{ $value['name'] }}</b></div>
-                <div class="d-flex product-border">
-                    <div>{{ __('Quantity:') }}</div>
-                    <div class="text-end ms-auto">{{ $value['quantity'] }}</div>
+        <div class="mt-3" style="font-size: 12px;">
+            @foreach ($sales['data'] as $key => $value)
+                <div class="mb-2">
+                    <div><b>{{ ucwords($value['name']) }}</b></div>
+                    <div class="d-flex justify-content-between">
+                        {{-- <span class="text-xs">{{ __('Qty:') }} {{ $value['quantity'] }}</span> --}}
+                        <span class="text-xs">{{ __('Price:') }} {{ $value['quantity'] }} x {{ $value['price'] }}</span>
+                        <span class="text-xs">{!! $value['product_tax'] !!} ({!! $value['tax_amount'] !!})</span>
+                        <span class="text-xs">{{ __('Total:') }} {{ $value['subtotal'] }}</span>
+                    </div>
                 </div>
-            </div>
-            <div class="d-flex product-border">
-                <div>{{__('Price:')}}</div>
-                <div class="text-end ms-auto">{{ $value['price'] }}</div>
-            </div>
-            <div class="d-flex product-border">
-                <div>{{__('Tax:')}}</div>
-                <div class="text-end ms-auto"> {{ $value['tax'] }}</div>
-            </div>
-            <div class="d-flex product-border mb-2">
-                <div>{{__('Tax Amount:')}}</div>
-                <div class="text-end ms-auto">{{ $value['tax_amount'] }}</div>
-            </div>
-            <div class="d-flex product-border mb-2">
-                <div>{{__('Sub Total:')}}</div>
-                <div class="text-end ms-auto"> {{ $value['subtotal'] }}</div>
-            </div>
-        @endforeach
+            @endforeach
+        </div>
     @endif
+    <div class="d-flex product-border mb-2 mt-4">
+        <div><b>{{__('Subtotal:')}}</b></div>
+        <div class="text-end ms-auto"> {{ $sales['total_price_qty'] }}</div>
+    </div>
+    <div class="d-flex product-border mb-2 mt-4">
+        <div><b>{{__('Tax:')}}</b></div>
+        <div class="text-end ms-auto"> {{ $sales['total_tax'] }}</div>
+    </div>
     <div class="d-flex product-border mb-2 mt-4">
         <div><b>{{__('Discount:')}}</b></div>
         <div class="text-end ms-auto"> {{ $sales['discount'] }}</div>
     </div>
     <div class="d-flex product-border mb-2">
-        <div><b>{{__('Total:')}}</b></div>
+        <div><b>{{__('Total Amount:')}}</b></div>
         <div class="text-end ms-auto"> {{ $sales['total'] }}</div>
     </div>
 

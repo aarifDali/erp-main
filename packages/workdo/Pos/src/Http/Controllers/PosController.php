@@ -1447,6 +1447,8 @@ class PosController extends Controller
         $details['user']['details'] = $userdetails;
 
         $mainsubtotal = 0;
+        $totalPriceQty = 0; // Initialize sum of (Qty x Price)
+        $totalTax = 0;      // Initialize sum of taxes
         $sales        = [];
         $sess = session()->get('pos');
         if(isset($sess) && !empty($sess) && count($sess) > 0){
@@ -1461,7 +1463,10 @@ class PosController extends Controller
                 $sales['data'][$key]['product_tax']        = $value['product_tax'];
                 $sales['data'][$key]['tax_amount'] = currency_format_with_sym($tax);
                 $sales['data'][$key]['subtotal']   = currency_format_with_sym($value['subtotal']);
+
                 $mainsubtotal                      += $value['subtotal'];
+                $totalPriceQty += $subtotal; // Add to sum of (Qty x Price)
+                $totalTax += $tax;
             }
         }
 
@@ -1475,6 +1480,9 @@ class PosController extends Controller
         $total= $mainsubtotal-$discount;
         $sales['sub_total'] = currency_format_with_sym($mainsubtotal);
         $sales['total'] = currency_format_with_sym($total);
+        // Add new totals for sum of (Qty x Price) and taxes
+        $sales['total_price_qty'] = currency_format_with_sym($totalPriceQty);
+        $sales['total_tax'] = currency_format_with_sym($totalTax);
 
         return view('pos::pos.printview', compact('details', 'sales', 'customer'));
 
