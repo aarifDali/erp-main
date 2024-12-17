@@ -221,37 +221,40 @@
     <script src="{{ asset('js/jquery-searchbox.js') }}"></script>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-        
+       document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('customerFormContainer').addEventListener('submit', function (event) {
                 event.preventDefault();
+
                 const form = event.target;
-        
+
                 fetch(form.action, {
                     method: form.method,
                     body: new FormData(form),
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest', 
+                    },
                 })
                     .then(response => response.json())
                     .then(data => {
                         if (data.success) {
-                        
-                            $('#createCustomerModal').modal('hide');
-                            toastrs('Success', 'New customer created successfully.', 'success');
-                            // Update the customer dropdown
-
-                            const customerDropdown = document.getElementById('customer');
-                            const newOption = new Option(data.customer.name, data.customer.id);
-                            customerDropdown.add(newOption);
-
-                            // $(customerDropdown).val(data.customer.id).change();
                             
+                            $('#createCustomerModal').modal('hide');
+
+                            toastrs('Success', data.message, 'success');
+
                             location.reload();
+                            form.reset();
+                            
 
                         } else {
-                            console.error('Error creating customer:', data.error);
+                            console.error('Error:', data.error);
+                            toastrs('Error', data.error, 'error');
                         }
                     })
-                    .catch(error => console.error('Submission error:', error));
+                    .catch(error => {
+                        console.error('Submission error:', error);
+                        toastrs('Error', 'Something went wrong. Please try again.', 'error');
+                    });
             });
         });
     </script>

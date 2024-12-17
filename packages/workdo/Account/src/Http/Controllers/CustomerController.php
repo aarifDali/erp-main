@@ -185,11 +185,13 @@ class CustomerController extends Controller
             }
             event(new CreateCustomer($request,$customer));
 
-            return response()->json([
-                'success' => true,
-                'message' => __('Customer created successlly'),  
-                'customer' => ['user_id' => $customer->user_id, 'name' => $customer->name],
-            ]);
+            if ($request->ajax()) {
+                return response()->json([
+                    'success' => true,
+                    'message' => __('Customer created successfully'),
+                    'customer' => ['id' => $customer->id, 'name' => $customer->name],
+                ]);
+            }
 
             return redirect()->back()->with('success', __('The customer has been created successfully.'));
 
@@ -386,10 +388,16 @@ class CustomerController extends Controller
 
             event(new DestroyCustomer($customer));
             $customer->delete();
+
+            $user = User::find($customer->user_id);
+            if (!empty($user)) {
+                $user->delete();
+            } else {
+                return redirect()->back()->with('error', __('employee already delete.'));
+            }
             return redirect()->route('customer.index')->with('success', __('The customer has been deleted.'));
         }
-        else
-        {
+        else{
             return redirect()->back()->with('error', __('Permission denied.'));
         }
     }
