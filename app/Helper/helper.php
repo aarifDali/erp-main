@@ -1723,6 +1723,7 @@ if (!function_exists('templateData')) {
             "template8" => "Tokyo",
             "template9" => "Sydney",
             "template10" => "Paris",
+            "custom_template" => "GL_custom",
         ];
         return $arr;
     }

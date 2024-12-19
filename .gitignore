@@ -10,6 +10,7 @@
 /storage/framework/sessions
 /storage/framework/views
 /storage/logs
+/uploads
 .DS_Store
 .env
 .phpunit.result.cache
