@@ -9,6 +9,7 @@ use App\Models\ProposalProduct;
 use Illuminate\Support\Facades\Auth;
 use Workdo\ProductService\Entities\Category;
 use Workdo\ProductService\Entities\ProductService;
+use Workdo\ProductService\Entities\ShortageProduct;
 use Workdo\ProductService\Entities\Tax;
 use Workdo\ProductService\Entities\Unit;
 use App\Events\DeleteProductService;
@@ -268,6 +269,7 @@ class ProductServiceController extends Controller
             $productService->name           = $request->name;
             $productService->description    = $request->description;
             $productService->sku            = $request->sku;
+
             if($request->hasFile('image')){
                 $name = time() . "_" . $request->image->getClientOriginalName();
                 $path = upload_file($request,'image',$name,'products');
@@ -278,19 +280,24 @@ class ProductServiceController extends Controller
             $productService->purchase_price = $request->purchase_price;
             $productService->tax_id         = !empty($request->tax_id) ? implode(',', $request->tax_id) : '';
             $productService->unit_id        = $request->unit_id;
-            if(!empty($request->quantity))
-            {
-                $productService->quantity        = $request->quantity;
-            }
-            else{
-                $productService->quantity   = 0;
-            }
+            $productService->quantity       = $request->quantity ?? 0;
+            $productService->reorder_qty    = $request->reorder_qty ?? 0;
             $productService->type           = $request->type;
             $productService->category_id    = $request->category_id;
-            $productService->warehouse_id    = $request->warehouse_id;
+            $productService->warehouse_id   = $request->warehouse_id;
             $productService->created_by     = creatorId();
-            $productService->workspace_id     = getActiveWorkSpace();
+            $productService->workspace_id   = getActiveWorkSpace();
             $productService->save();
+
+            if ($productService->quantity <= $productService->reorder_qty) {
+                ShortageProduct::updateOrCreate(
+                    ['product_service_id' => $productService->id],
+                    [
+                        'created_at' => now(),
+                        'updated_at' => now(),
+                    ]
+                );
+            }
 
             event(new CreateProduct($request,$productService));
 
@@ -479,7 +486,8 @@ class ProductServiceController extends Controller
             $productService->purchase_price = $request->purchase_price;
             $productService->tax_id         = !empty($request->tax_id) ? implode(',', $request->tax_id) : '';
             $productService->unit_id        = $request->unit_id;
-            $productService->quantity        = $request->quantity;
+            $productService->quantity       = $request->quantity;
+            $productService->reorder_qty    = $request->reorder_qty;
             $productService->type           = $request->type;
             if($request->hasFile('image'))
             {

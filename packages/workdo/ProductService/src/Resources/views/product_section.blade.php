@@ -122,14 +122,19 @@
                                     </div>
                                 </div>
                                 @stack('add_column_in_productservice')
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-4">
                                     {{ Form::label('unit_id', __('Unit'), ['class' => 'form-label']) }}<x-required></x-required>
                                     {{ Form::select('unit_id', $unit, !empty($productService->unit_id)?$productService->unit_id:'', ['class' => 'form-control', 'required' => 'required']) }}
                                 </div>
-
-                                <div class="form-group col-md-6 quantity">
+                                
+                                <div class="form-group col-md-4 quantity">
                                     {{ Form::label('quantity', __('Quantity'), ['class' => 'form-label']) }}<x-required></x-required>
                                     {{ Form::number('quantity', !empty($productService->quantity)?$productService->quantity:'0', ['class' => 'form-control', 'min' => '0','required' => 'required']) }}
+                                </div>
+
+                                <div class="form-group col-md-4">
+                                    {{ Form::label('reorder_qty', __('Reorder Qty'), ['class' => 'form-label']) }}
+                                    {{ Form::number('reorder_qty', !empty($productService->reorder_qty)?$productService->reorder_qty:'0', ['class' => 'form-control', 'min' => '0']) }}
                                 </div>
                             </div>
                             <div class="row mt-3">

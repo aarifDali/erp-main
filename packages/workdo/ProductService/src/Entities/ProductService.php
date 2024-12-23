@@ -13,7 +13,7 @@ class ProductService extends Model
     use HasFactory;
 
     protected $fillable = [
-        'name','sku','sale_price','purchase_price','tax_id','category_id','description','type', 'icon', 'parent_id', 'sort_order', 'route', 'is_visible','quantity', 'permissions', 'module','image','unit_id','sale_chartaccount_id','expense_chartaccount_id','workspace_id','created_by'
+        'name','sku','sale_price','purchase_price','tax_id','category_id','description','type', 'icon', 'parent_id', 'sort_order', 'route', 'is_visible', 'quantity', 'reorder_qty', 'permissions', 'module','image','unit_id','sale_chartaccount_id','expense_chartaccount_id','workspace_id','created_by'
     ];
     public static $product_type =
     [
@@ -36,6 +36,12 @@ class ProductService extends Model
     {
         return $this->belongsTo('Workdo\ProductService\Entities\Category', 'category_id');
     }
+
+    public function shortageProduct()
+    {
+        return $this->hasOne(ShortageProduct::class, 'product_service_id');
+    }
+
     public function taxes()
     {
         return $this->hasOne('Workdo\ProductService\Entities\Tax', 'id', 'tax_id')->first();
@@ -165,4 +171,27 @@ class ProductService extends Model
             return $totalquantity;
         }
     }
+
+
+    public function checkAndUpdateShortage()
+    {
+        if ($this->quantity <= $this->reorder_qty) {
+            ShortageProduct::updateOrCreate(
+                ['product_service_id' => $this->id],
+                []
+            );
+        } else {
+            ShortageProduct::where('product_service_id', $this->id)->delete();
+        }
+    }
+
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::saved(function ($productService) {
+            $productService->checkAndUpdateShortage();
+        });
+    }
+
 }
