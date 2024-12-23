@@ -4,6 +4,7 @@ use Workdo\ProductService\Http\Controllers\CategoryController;
 use Workdo\ProductService\Http\Controllers\ProductsLogTimeController;
 use Workdo\ProductService\Http\Controllers\ProductServiceController;
 use Workdo\ProductService\Http\Controllers\ProductStockController;
+use Workdo\ProductService\Http\Controllers\ShortageProductController;
 use Workdo\ProductService\Http\Controllers\TaxController;
 use Workdo\ProductService\Http\Controllers\UnitController;
 
@@ -25,6 +26,9 @@ Route::group(['middleware' => ['web', 'auth', 'verified','PlanModuleCheck:Produc
     Route::resource('tax', TaxController::class);
     Route::resource('product-service', ProductServiceController::class);
     Route::resource('productslogtime', ProductsLogTimeController::class);
+
+    // Shortage Product
+    Route::resource('shortage-product', ShortageProductController::class);
 
     Route::get('product-service-grid', [ProductServiceController::class, 'grid'])->name('product-service.grid');
 
