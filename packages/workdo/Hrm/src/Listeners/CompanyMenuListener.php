@@ -145,6 +145,19 @@ class CompanyMenuListener
         ]);
         $menu->add([
             'category' => 'HR',
+            'title' => __('Daily Report'),
+            'icon' => '',
+            'name' => 'daily-report',
+            'parent' => 'hrm',
+            'order' => 25,
+            'ignore_if' => [],
+            'depend_on' => [],
+            'route' => 'daily-report.index',
+            'module' => $module,
+            'permission' => 'leave manage'
+        ]);
+        $menu->add([
+            'category' => 'HR',
             'title' => __('HR Admin'),
             'icon' => '',
             'name' => 'hr-admin',

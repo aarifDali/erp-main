@@ -21,9 +21,11 @@
                                 </a>
                             @endif                            
                             <a href="#useradd-1"
-                                class="list-group-item list-group-item-action border-0">{{ $dailyReport->report_date }} <div
-                                class="float-end"><i class="ti ti-chevron-right"></i></div>
-                            </a>   
+                                class="list-group-item list-group-item-action border-0">
+                                {{ \Carbon\Carbon::parse($dailyReport->report_date)->format('d-m-Y, l') }}
+                                <div class="float-end"><i class="ti ti-chevron-right"></i>
+                                </div>
+                            </a>                              
                             <a href="#useradd-4"
                                 class="list-group-item list-group-item-action border-0">{{ __('Remarks') }} <div
                                 class="float-end"><i class="ti ti-chevron-right"></i></div>
