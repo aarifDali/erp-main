@@ -19,6 +19,7 @@ use Laratrust\Traits\HasRolesAndPermissions;
 use Lab404\Impersonate\Models\Impersonate;
 use Laravel\Paddle\Billable;
 use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
+use Workdo\Hrm\Entities\Employee;
 use Workdo\MusicInstitute\Entities\MusicStudent;
 use Workdo\MusicInstitute\Entities\MusicTeacher;
 
@@ -591,5 +592,10 @@ class User extends Authenticatable implements LaratrustUser,MustVerifyEmail,JWTS
     public function admission()
     {
         return $this->hasOne(\Workdo\School\Entities\Admission::class, 'converted_student_id');
+    }
+
+    public function employee()
+    {
+        return $this->hasOne(Employee::class, 'user_id', 'id');
     }
 }
