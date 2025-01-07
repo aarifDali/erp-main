@@ -13,6 +13,7 @@ use Workdo\Hrm\Http\Controllers\CommissionController;
 use Workdo\Hrm\Http\Controllers\CompanyContributionController;
 use Workdo\Hrm\Http\Controllers\CompanyPolicyController;
 use Workdo\Hrm\Http\Controllers\ComplaintController;
+use Workdo\Hrm\Http\Controllers\DailyReportController;
 use Workdo\Hrm\Http\Controllers\DeductionOptionController;
 use Workdo\Hrm\Http\Controllers\DepartmentController;
 use Workdo\Hrm\Http\Controllers\DesignationController;
@@ -70,7 +71,6 @@ Route::group(['middleware' => ['web', 'auth', 'verified','PlanModuleCheck:Hrm']]
     Route::post('attendance/attendance', [AttendanceController::class, 'attendance'])->name('attendance.attendance');
 
     // Attendance import
-
     Route::get('attendance/import/export', [AttendanceController::class, 'fileImportExport'])->name('attendance.file.import');
     Route::post('attendance/import', [AttendanceController::class, 'fileImport'])->name('attendance.import');
     Route::get('attendance/import/modal', [AttendanceController::class, 'fileImportModal'])->name('attendance.import.modal');
@@ -101,6 +101,9 @@ Route::group(['middleware' => ['web', 'auth', 'verified','PlanModuleCheck:Hrm']]
     Route::post('employee/import', [EmployeeController::class, 'fileImport'])->name('employee.import')->middleware(['auth']);
     Route::get('employee/import/modal', [EmployeeController::class, 'fileImportModal'])->name('employee.import.modal')->middleware(['auth']);
     Route::post('employee/data/import/', [EmployeeController::class, 'employeeImportdata'])->name('employee.import.data')->middleware(['auth']);
+
+    // Daily Report
+    Route::resource('daily-report', DailyReportController::class);
 
     // settig in hrm
     Route::post('hrm/setting/store', [HrmController::class, 'setting'])->name('hrm.setting.store')->middleware(['auth']);
