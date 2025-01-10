@@ -101,7 +101,8 @@
                         <tr>
                             <th>{{ __('Sr.No') }}</th>
                             <th>{{ __('Description') }}</th>
-                            <th>{{ __('Time Spent') }}</th>
+                            <th>{{ __('Start Time') }}</th>
+                            <th>{{ __('End Time') }}</th>
                             <th>{{ __('Status') }}</th>
                             <th>{{ __('Attachment') }}</th>
                             <th></th>
@@ -115,7 +116,10 @@
                                 {{ Form::textarea('description', $task->description, ['class' => 'form-control', 'style' => 'resize: none;', 'rows' => 1, 'required' => 'required', 'placeholder' => __('Enter Task Description')]) }}
                             </td>
                             <td>
-                                {{ Form::number('time_spent', $task->time_spent, ['class' => 'form-control', 'required' => 'required', 'placeholder' => __('Time(In hrs)'), 'min' => 0, 'step' => 0.1]) }}
+                                {{ Form::time('start_time',  $task->start_time, ['class' => 'form-control', 'placeholder' => __('Start Time')]) }}
+                            </td>
+                            <td>
+                                {{ Form::time('end_time',  $task->end_time, ['class' => 'form-control', 'placeholder' => __('End Time')]) }}
                             </td>
                             <td width="25%" class="form-group pt-0">
                                 <select name="status" class="form-control status_id js-searchBox" required>

@@ -9,7 +9,11 @@ class DailyReportTask extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['daily_report_id', 'description', 'time_spent', 'status', 'attachment'];
+    protected $fillable = ['daily_report_id', 'description', 'start_time', 'end_time', 'status', 'attachment'];
+    protected $casts = [
+        'start_time' => 'datetime:H:i',
+        'end_time' => 'datetime:H:i',
+    ];
 
     public function dailyReport()
     {
