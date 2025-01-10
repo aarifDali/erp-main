@@ -16,7 +16,7 @@
             var $dragAndDrop = $("body .repeater tbody").sortable({
                 handle: '.sort-handler',
                 stop: function() {
-                    updateSerialNumbers(); // Update Sr.No after sorting
+                    updateSerialNumbers(); 
                 }
             });
     
@@ -39,17 +39,17 @@
                     }
     
                     JsSearchBox();
-                    updateSerialNumbers(); // Update Sr.No after adding a new row
+                    updateSerialNumbers();
                 },
                 hide: function(deleteElement) {
                     $(this).slideUp(deleteElement, function() {
                         $(this).remove();
-                        updateSerialNumbers(); // Update Sr.No after removing a row
+                        updateSerialNumbers();
                     });
                 },
                 ready: function(setIndexes) {
                     $dragAndDrop.on('drop', setIndexes);
-                    updateSerialNumbers(); // Initial update of Sr.No
+                    updateSerialNumbers();
                 },
                 isFirstItemUndeletable: true
             });
@@ -60,10 +60,10 @@
                 $repeater.setList(value);
             }
     
-            // Function to update the Sr.No column
+            
             function updateSerialNumbers() {
                 $(selector + ' .repeater tbody tr').each(function(index) {
-                    $(this).find('.sr-no').text(index + 1); // Update the Sr.No to index + 1
+                    $(this).find('.sr-no').text(index + 1);
                 });
             }
         }
@@ -147,7 +147,8 @@
                         <tr>
                             <th>{{ __('Sr.No') }}</th>
                             <th>{{ __('Description') }}</th>
-                            <th>{{ __('Time Spent') }}</th>
+                            <th>{{ __('Start Time') }}</th>
+                            <th>{{ __('End Time') }}</th>
                             <th>{{ __('Status') }} </th>
                             <th>{{ __('Attachment') }}</th>
                             
@@ -161,7 +162,10 @@
                                 {{ Form::textarea('description', null, ['class' => 'form-control', 'style' => 'resize: none;', 'rows' => 1, 'required' => 'required', 'placeholder' => __('Enter Task Description')]) }}
                             </td>
                             <td>
-                                {{ Form::number('time_spent', null, ['class' => 'form-control', 'required' => 'required', 'placeholder' => __('Time(In hrs)'), 'min' => 0, 'step' => 0.1]) }}
+                                {{ Form::time('start_time', null, ['class' => 'form-control', 'placeholder' => __('Start Time')]) }}
+                            </td>
+                            <td>
+                                {{ Form::time('end_time', null, ['class' => 'form-control', 'placeholder' => __('End Time')]) }}
                             </td>
                             <td width="25%" class="form-group pt-0">
                                 <select name="status" class="form-control status_id js-searchBox" required>

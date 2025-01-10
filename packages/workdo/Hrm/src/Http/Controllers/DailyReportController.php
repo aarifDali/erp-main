@@ -32,7 +32,8 @@ class DailyReportController extends Controller
             'report_date' => 'required|date',
             'tasks' => 'required|array|min:1',
             'tasks.*.description' => 'required|string',
-            'tasks.*.time_spent' => 'required|numeric|min:0',
+            'tasks.*.start_time' => 'date_format:H:i',
+            'tasks.*.end_time' => 'date_format:H:i|after:tasks.*.start_time',
             'tasks.*.status' => 'required|string|in:In Progress,Completed,Pending',
             'tasks.*.attachment' => 'nullable|file|mimes:png,jpg,jpeg|max:2048',
             'remarks' => 'nullable|string',
@@ -66,7 +67,8 @@ class DailyReportController extends Controller
             DailyReportTask::create([
                 'daily_report_id' => $dailyReport->id,
                 'description' => $task['description'],
-                'time_spent' => $task['time_spent'],
+                'start_time' => $task['start_time'],
+                'end_time' => $task['end_time'],
                 'status' => $task['status'],
                 'attachment' => $attachmentPath,
             ]);
@@ -108,7 +110,8 @@ class DailyReportController extends Controller
             'tasks' => 'required|array|min:1',
             'tasks.*.id' => 'nullable|integer|exists:daily_report_tasks,id',
             'tasks.*.description' => 'required|string',
-            'tasks.*.time_spent' => 'required|numeric|min:0',
+            'tasks.*.start_time' => 'nullable|date_format:H:i',
+            'tasks.*.end_time' => 'nullable|date_format:H:i|after:tasks.*.start_time',
             'tasks.*.status' => 'required|string|in:In Progress,Completed,Pending',
             'tasks.*.attachment' => 'nullable|file|mimes:png,jpg,jpeg|max:2048',
             'tasks.*.existing_attachment' => 'nullable|string',
@@ -140,7 +143,8 @@ class DailyReportController extends Controller
                 $existingTask = DailyReportTask::findOrFail($task['id']);
                 $existingTask->update([
                     'description' => $task['description'],
-                    'time_spent' => $task['time_spent'],
+                    'start_time' => $task['start_time'],
+                    'end_time' => $task['end_time'],
                     'status' => $task['status'],
                     'attachment' => $attachmentPath, 
                 ]);
@@ -149,7 +153,8 @@ class DailyReportController extends Controller
                 DailyReportTask::create([
                     'daily_report_id' => $dailyReport->id,
                     'description' => $task['description'],
-                    'time_spent' => $task['time_spent'],
+                    'start_time' => $task['start_time'],
+                    'end_time' => $task['end_time'],
                     'status' => $task['status'],
                     'attachment' => $attachmentPath,
                 ]);

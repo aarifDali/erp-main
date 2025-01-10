@@ -127,7 +127,16 @@
                                                                                 <dd class="col-lg-8 text-lg">{{ $task->description }}</dd>
                     
                                                                                 <dt class="col-lg-4 h6 text-lg">{{ __('Time Spent') }}</dt>
-                                                                                <dd class="col-lg-8 text-lg">{{ $task->time_spent }} hrs</dd>
+                                                                                <dd class="col-lg-8 text-lg">
+                                                                                    @if ($task->start_time && $task->end_time)
+                                                                                        {{ \Carbon\Carbon::parse($task->start_time)->format('H:i') }} to {{ \Carbon\Carbon::parse($task->end_time)->format('H:i') }}
+                                                                                    @elseif ($task->start_time && !$task->end_time)
+                                                                                        {{ \Carbon\Carbon::parse($task->start_time)->format('H:i') }} to --
+                                                                                    @else
+                                                                                        -- to --
+                                                                                    @endif
+                                                                                </dd>
+                                                                                
                     
                                                                                 <dt class="col-lg-4 h6 text-lg">{{ __('Status') }}</dt>
                                                                                 <dd class="col-lg-8 text-lg">{{ ucfirst($task->status) }}</dd>
