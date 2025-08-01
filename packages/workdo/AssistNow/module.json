@@ -1,0 +1,10 @@
+{
+    "name": "AssistNow",
+    "alias": "Client Assistance Management",
+    "description": "",
+    "priority": 70,
+    "version": 1.0,
+    "monthly_price": 0,
+    "yearly_price": 0,
+    "package_name": "assistnow"
+}

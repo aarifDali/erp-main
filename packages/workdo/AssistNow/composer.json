@@ -1,0 +1,26 @@
+{
+    "name": "workdo/assistnow",
+    "description": "Description for assistnow package",
+    "type": "library",
+    "license": "MIT",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Workdo\\AssistNow\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Advoxy",
+            "email": "info@theadvoxy.com"
+        }
+    ],
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Workdo\\AssistNow\\Providers\\AssistNowServiceProvider"
+                
+            ]
+        }
+    }
+}
