@@ -84,6 +84,26 @@ class RoomsBookingController extends Controller
                 return redirect()->back()->with('error', $messages->first());
             }
 
+            // Validate room capacity
+            $room = Rooms::find($request->room_id);
+            if (!$room) {
+                return redirect()->back()->with('error', __('Room not found.'));
+            }
+
+            $numberOfRooms = (int)$request->room;
+            $maxAdults = $room->adults * $numberOfRooms;
+            $maxChildren = $room->children * $numberOfRooms;
+            $requestedAdults = (int)$request->adults;
+            $requestedChildren = (int)$request->children;
+
+            if ($requestedAdults > $maxAdults) {
+                return redirect()->back()->with('error', __('The number of adults (') . $requestedAdults . __(') exceeds the maximum capacity of ') . $numberOfRooms . __(' room(s) (') . $maxAdults . __(' adults).'));
+            }
+
+            if ($requestedChildren > $maxChildren) {
+                return redirect()->back()->with('error', __('The number of children (') . $requestedChildren . __(') exceeds the maximum capacity of ') . $numberOfRooms . __(' room(s) (') . $maxChildren . __(' children).'));
+            }
+
             $hotelCountry = Hotels::where('created_by', creatorId())
                       ->where('workspace', getActiveWorkSpace())
                       ->value('country');

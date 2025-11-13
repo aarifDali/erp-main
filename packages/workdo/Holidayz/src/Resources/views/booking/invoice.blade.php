@@ -139,37 +139,57 @@
                                         <table class="table invoice-table ">
                                             <tbody>
                                                 @php
-                                                    $total = $booking->GetBookingOrderDetails->sum('price') + $booking->GetBookingOrderDetails->sum('service_charge');
+                                                    // Calculate subtotal from booking order details
+                                                    $subTotal = $booking->GetBookingOrderDetails->sum('price') + $booking->GetBookingOrderDetails->sum('service_charge');
+                                                    
+                                                    // Get discount amount from booking (manual discount entered)
+                                                    $discountAmount = $booking->discount_amount ?? 0;
+                                                    
+                                                    // Calculate coupon discount if coupon exists
+                                                    $couponDiscount = 0;
+                                                    if ($booking->coupon_id != 0 && $booking->getCouponDetails) {
+                                                        $couponDiscount = ($subTotal * $booking->getCouponDetails->discount) / 100;
+                                                    }
+                                                    
+                                                    // Total discount = manual discount + coupon discount
+                                                    $totalDiscount = $discountAmount + $couponDiscount;
+                                                    
+                                                    // Use stored amount_to_pay from booking (amount after discount)
+                                                    // If not available, calculate it
+                                                    $finalAmount = $booking->amount_to_pay ?? ($subTotal - $totalDiscount);
                                                 @endphp
                                                 <tr>
                                                     <th>{{ __('Sub Total') }}:</th>
-                                                    <td>{{ currency_format_with_sym($total,$hotel->created_by,$hotel->workspace) }}</td>
+                                                    <td>{{ currency_format_with_sym($subTotal,$hotel->created_by,$hotel->workspace) }}</td>
                                                 </tr>
-                                                <tr>
-                                                    @if ($booking->coupon_id == 0)
-                                                        @php
-                                                            $discoundPrice = 0;
-                                                        @endphp
-                                                        <th>{{ __('Discount (0%)') }}:</th>
-                                                        <td>{{ currency_format_with_sym(0,$hotel->created_by,$hotel->workspace) }}</td>
-                                                    @else
-                                                        <th>{{ __('Discount (' . $booking->getCouponDetails->discount . '%) ') }}:
-                                                        </th>
-                                                        @php
-                                                            $discoundPrice = ($total * $booking->getCouponDetails->discount) / 100;
-                                                        @endphp
-                                                        <td>{{ currency_format_with_sym($discoundPrice,$hotel->created_by,$hotel->workspace) }}</td>
-                                                    @endif
-                                                </tr>
+                                                @if ($totalDiscount > 0)
+                                                    <tr>
+                                                        <th>{{ __('Discount') }}:</th>
+                                                        <td>
+                                                            @if ($discountAmount > 0 && $couponDiscount > 0)
+                                                                {{ currency_format_with_sym($discountAmount,$hotel->created_by,$hotel->workspace) }} 
+                                                                ({{ __('Manual') }}) + 
+                                                                {{ currency_format_with_sym($couponDiscount,$hotel->created_by,$hotel->workspace) }} 
+                                                                ({{ $booking->getCouponDetails->discount ?? 0 }}% {{ __('Coupon') }}) = 
+                                                                <strong>{{ currency_format_with_sym($totalDiscount,$hotel->created_by,$hotel->workspace) }}</strong>
+                                                            @elseif ($discountAmount > 0)
+                                                                <strong>{{ currency_format_with_sym($discountAmount,$hotel->created_by,$hotel->workspace) }}</strong>
+                                                            @elseif ($couponDiscount > 0)
+                                                                <strong>{{ currency_format_with_sym($couponDiscount,$hotel->created_by,$hotel->workspace) }}</strong>
+                                                                ({{ $booking->getCouponDetails->discount ?? 0 }}% {{ __('Coupon') }})
+                                                            @endif
+                                                        </td>
+                                                    </tr>
+                                                @endif
                                                 <tr>
                                                     <td>
                                                         <hr />
-                                                        <h5 class="text-primary m-r-10">{{ __('Total') }} :</h5>
+                                                        <h5 class="text-primary m-r-10">{{ __('Total') }} / {{ __('Amount to Pay') }}:</h5>
                                                     </td>
                                                     <td>
                                                         <hr />
                                                         <h5 class="text-primary">
-                                                            {{ currency_format_with_sym($total - $discoundPrice,$hotel->created_by,$hotel->workspace) }}</h5>
+                                                            {{ currency_format_with_sym($finalAmount,$hotel->created_by,$hotel->workspace) }}</h5>
                                                     </td>
                                                 </tr>
                                             </tbody>

@@ -1,4 +1,4 @@
-{{ Form::open(['route' => 'hotel-room-booking.store', 'method' => 'post', 'enctype' => 'multipart/form-data','class'=>'needs-validation','novalidate']) }}
+{{ Form::open(['route' => 'hotel-room-booking.store', 'method' => 'post', 'enctype' => 'multipart/form-data','class'=>'needs-validation']) }}
 <div class="modal-body">
     <div class="row">
 
@@ -15,9 +15,9 @@
         <div class="form-group col-md-12">
             {!! Form::label('', __('Room'), ['class' => 'form-label']) !!}<x-required></x-required>
             <select class="form-control" name="room_id" id="room_id" required>
-                <option value="" data-rent-value="0">{{ __('Select Room') }}</option>
+                <option value="" data-rent-value="0" data-adults="0" data-children="0">{{ __('Select Room') }}</option>
                 @foreach ($rooms as $room)
-                    <option value="{{ $room->id }}" data-apartment-type-id="{{ $room->apartment_type_id }}" data-rent-value="{{ $room->final_price }}">
+                    <option value="{{ $room->id }}" data-apartment-type-id="{{ $room->apartment_type_id }}" data-rent-value="{{ $room->final_price }}" data-adults="{{ $room->adults }}" data-children="{{ $room->children }}">
                         {{ $room->room_type }}
                     </option>
                 @endforeach
@@ -49,6 +49,8 @@
                 'class' => 'form-control',
                 'placeholder' => 'Enter Adults',
                 'required' => true,
+                'id' => 'adults',
+                'min' => '1',
             ]) !!}
         </div>
 
@@ -58,6 +60,8 @@
                 'class' => 'form-control',
                 'placeholder' => 'Enter Children',
                 'required' => true,
+                'id' => 'children',
+                'min' => '0',
             ]) !!}
         </div>
 
@@ -196,13 +200,58 @@
         });
     });
     $(document).ready(function() {
+        function validateCapacity() {
+            const roomSelect = $('#room_id');
+            const selectedOption = roomSelect.find('option:selected');
+            const numberOfRooms = parseInt($('.room').val()) || 0;
+            const requestedAdults = parseInt($('#adults').val()) || 0;
+            const requestedChildren = parseInt($('#children').val()) || 0;
+            const adultsInput = document.getElementById('adults');
+            const childrenInput = document.getElementById('children');
+            
+            // Clear previous custom validity
+            if (adultsInput) {
+                adultsInput.setCustomValidity('');
+            }
+            if (childrenInput) {
+                childrenInput.setCustomValidity('');
+            }
+            
+            if (roomSelect.val() && numberOfRooms > 0) {
+                const roomAdults = parseInt(selectedOption.attr('data-adults')) || 0;
+                const roomChildren = parseInt(selectedOption.attr('data-children')) || 0;
+                const maxAdults = roomAdults * numberOfRooms;
+                const maxChildren = roomChildren * numberOfRooms;
+                
+                // Validate adults using HTML5 native validation
+                if (requestedAdults > 0 && requestedAdults > maxAdults && adultsInput) {
+                    const errorMsg = 'Exceeds maximum capacity of ' + numberOfRooms + ' room(s) (' + maxAdults + ' adults).';
+                    adultsInput.setCustomValidity(errorMsg);
+                }
+                
+                // Validate children using HTML5 native validation
+                if (requestedChildren > 0 && requestedChildren > maxChildren && childrenInput) {
+                    const errorMsg = 'Exceeds maximum capacity of ' + numberOfRooms + ' room(s) (' + maxChildren + ' children).';
+                    childrenInput.setCustomValidity(errorMsg);
+                }
+            }
+        }
 
+        // Validate on room selection change
         $('#room_id').change(function () {
             const selectedOption = this.options[this.selectedIndex];
             const totalRent = parseFloat(selectedOption.getAttribute('data-rent-value'));
 
             $('.total').val(totalRent.toFixed(2));
-            updateAmountToPay(totalRent);  
+            updateAmountToPay(totalRent);
+            validateCapacity();
+        });
+        
+        // Real-time validation when adults, children, or room count changes
+        $('#adults, #children, .room').on('input change', function() {
+            validateCapacity();
+            // Trigger HTML5 validation check
+            this.checkValidity();
         });
 
         $('#applyDiscountButton').click(function () {
@@ -272,6 +321,26 @@
                         $('.booking-btn').removeAttr('disabled');
                     },
                 });
+            }
+        });
+
+        // Validate capacity before form submission
+        $('form').on('submit', function(e) {
+            // Run validation to set custom validity
+            validateCapacity();
+            
+            // Let HTML5 native validation handle the rest
+            // If custom validity is set, browser will show native error UI
+            const form = this;
+            if (!form.checkValidity()) {
+                e.preventDefault();
+                e.stopImmediatePropagation();
+                // Focus on first invalid field
+                const firstInvalid = form.querySelector(':invalid');
+                if (firstInvalid) {
+                    firstInvalid.focus();
+                }
+                return false;
             }
         });
 
